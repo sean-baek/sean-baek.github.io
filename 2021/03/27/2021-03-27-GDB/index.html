@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Slay">
+
+
+
+    <meta name="description" content="stone+i">
+
+
+
+<title>GDB | Slay(Sean)</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Slay&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" target="_blank" rel="noopener" href="https://sean.tistory.com">Tistory</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Slay&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" target="_blank" rel="noopener" href="https://sean.tistory.com">Tistory</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">GDB</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Slay</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">March 27, 2021&nbsp;&nbsp;23:51:00</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Note/">Note</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="GDB"><a href="#GDB" class="headerlink" title="GDB"></a>GDB</h1><ul>
+<li><p>보통은 GDB라고 부르는 GNU Debugger는 GNU 소프트웨어 시스템을 위한 기본 디버거입니다.</p>
+</li>
+<li><p>GDB는 다양한 유닉스 기반의 시스템에서 동작하는 이식성있는 디버거로, 에이다, C, C++, 포트란 등의 여러 프로그래밍 언어를 지원합니다.</p>
+</li>
+<li><p>기본 GDB에 pwngdb와 gef를 설치하면 더 보기 좋고 편리하게 사용할 수 있습니다.</p>
+</li>
+</ul>
+<hr>
+<h2 id="사용법"><a href="#사용법" class="headerlink" title="사용법"></a>사용법</h2><h3 id="gt-GDB에서-소스-코드를-볼-수-있는-추가-디버그-정보를-포함하도록-컴파일-g-옵션"><a href="#gt-GDB에서-소스-코드를-볼-수-있는-추가-디버그-정보를-포함하도록-컴파일-g-옵션" class="headerlink" title="-&gt; GDB에서 소스 코드를 볼 수 있는 추가 디버그 정보를 포함하도록 컴파일(-g 옵션)"></a>-&gt; GDB에서 소스 코드를 볼 수 있는 추가 디버그 정보를 포함하도록 컴파일(-g 옵션)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcc -g -o test test.c</span><br><span class="line">g++ -g -o test test.c</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="gt-GDB-실행"><a href="#gt-GDB-실행" class="headerlink" title="-&gt; GDB 실행"></a>-&gt; GDB 실행</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">qdb -q [프로그램명]</span><br><span class="line">gdb -q [프로그램명] [프로세스PID]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ex)</span><br><span class="line">gdb -q ./test</span><br><span class="line">gdb -q test</span><br><span class="line"></span><br><span class="line">gdb -q test 1234</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="gt-Intel-문법-설정"><a href="#gt-Intel-문법-설정" class="headerlink" title="-&gt; Intel 문법 설정"></a>-&gt; Intel 문법 설정</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set disassembly-flavor intel</span><br><span class="line">ex)</span><br><span class="line">shell : echo &quot;set disassembly-flavor intel&quot; &gt; ~/.gdbinit</span><br><span class="line">gdb : set disassembly-flavor intel</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="gt-GDB-종료"><a href="#gt-GDB-종료" class="headerlink" title="-&gt; GDB 종료"></a>-&gt; GDB 종료</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">q(quit)</span><br><span class="line"></span><br><span class="line">or</span><br><span class="line"></span><br><span class="line">ctrl+d</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="명령어"><a href="#명령어" class="headerlink" title="명령어"></a>명령어</h2><h3 id="gt-l-list"><a href="#gt-l-list" class="headerlink" title="-&gt; l (list)"></a>-&gt; l (list)</h3><ul>
+<li>소스 코드 출력</li>
+<li>기본 출력 라인 수는 10이지만, set listsize [라인 수] 명령어로 변경</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">l</span><br><span class="line">l [라인 수]</span><br><span class="line">l [함수명]</span><br><span class="line">l [파일명]:[함수명]</span><br><span class="line">l [파일명]:[라인수]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ex)</span><br><span class="line">l 10</span><br><span class="line">l main</span><br><span class="line">l test:main</span><br><span class="line">l test:15</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="gt-disas-disassemble"><a href="#gt-disas-disassemble" class="headerlink" title="-&gt; disas (disassemble)"></a>-&gt; disas (disassemble)</h3><ul>
+<li>어셈블리 코드 출력</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">disas [함수명] : 특정 함수의 어셈블리 코드 출력</span><br><span class="line">disas [함수 내의 시작 주소] [함수 내의 종료 주소] : 주소 사이의 어셈블리 코드 출력</span><br><span class="line">x/[명령 수]i [선두 주소]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ex)</span><br><span class="line">disas main</span><br><span class="line"></span><br><span class="line">disas 0x1122334 0x1122445</span><br><span class="line"></span><br><span class="line">x/10i 0x1122334</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="gt-진행-명령어"><a href="#gt-진행-명령어" class="headerlink" title="-&gt; 진행 명령어"></a>-&gt; 진행 명령어</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">r(run) : 프로그램 수행</span><br><span class="line">r [arg1] [arg2] : 프로그램 실행 시 인자를 지정하여 수행</span><br><span class="line"></span><br><span class="line">k(kill) : 프로그램 수행 종료</span><br><span class="line"></span><br><span class="line">s(step) : 현재 행 수행 후 정지, 함수 호출 시 함수 안으로 들어감</span><br><span class="line">s [n] : s 명령어를 n번 수행 후 정지</span><br><span class="line"></span><br><span class="line">n(next) : 현재 행 수행 후 정지, 함수 호출 시 함수 수행 후 다음 행으로 감</span><br><span class="line">n [n] : n 명령어를 n번 수행 후 정지</span><br><span class="line"></span><br><span class="line">c(countinue) : 다음 브레이크 포인트까지 진행</span><br><span class="line"></span><br><span class="line">u(until) : 현재 루프를 빠져 나감</span><br><span class="line"></span><br><span class="line">finish : 현재 함수가 길어서 끝나는 지점으로 이동</span><br><span class="line"></span><br><span class="line">return : 현재 함수가 길어서 남은 부분을 수행하지 않고 빠져 나옴</span><br><span class="line">return [n] : return 명령어 사용 시 return 값을 임의로 지정</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ex)</span><br><span class="line">r</span><br><span class="line">r 2 5</span><br><span class="line">s 2</span><br><span class="line">n 3</span><br><span class="line">return 4123</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="gt-info-명령어와-스택-상태-검사"><a href="#gt-info-명령어와-스택-상태-검사" class="headerlink" title="-&gt; info 명령어와 스택 상태 검사"></a>-&gt; info 명령어와 스택 상태 검사</h3><ul>
+<li>info 명령어는 현재 디버깅에 대한 여러 정보를 주는 명령어로 축약어는 i이 이다.</li>
+<li>i만 입력하면 어떤 옵션으로 어떤 정보를 확인할 수 있는지 목록이 보인다.</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">i &lt;tab키&gt; : info로 확인 가능한 명령어 출력</span><br><span class="line"></span><br><span class="line">i set : 설정 가능한 내용 출력</span><br><span class="line"></span><br><span class="line">i r : 레지스터 전체 출력</span><br><span class="line">i r $[레지스터] : 레지스터의 값 출력</span><br><span class="line"></span><br><span class="line">i signals : signal 종류 출력</span><br><span class="line"></span><br><span class="line">i f : 스택 프레임 내용 출력</span><br><span class="line"></span><br><span class="line">i args : 현재 함수로 넘어온 인자의 정보를 확인</span><br><span class="line"></span><br><span class="line">i local : 현재 함수의 지역 변수를 확인</span><br><span class="line"></span><br><span class="line">i locals : 현재 위치한 행에서 접근 가능한 지역 변수들 목록 확인</span><br><span class="line"></span><br><span class="line">i variables : 현재 위치한 행에서 접근 가능한 전역 변수들 목록 확인</span><br><span class="line"></span><br><span class="line">i catch : 함수의 예외 핸들러를 출력</span><br><span class="line"></span><br><span class="line">i b : 등록된 breakpoints와 watchpoints를 확인</span><br><span class="line"></span><br><span class="line">i line : 현재 디버깅하고 있는 위치 정보 확인</span><br><span class="line"></span><br><span class="line">i program : 현재 프로그램의 process 정보 확인</span><br><span class="line"></span><br><span class="line">bt : 전체 스택 프레임 출력(콜스택).</span><br><span class="line">     백트레이스로 프로그램 스택을 역으로 탐색하므로, segmentation fault가 발생했다면 오류 지점에 도달하기 전 과정을 확인하여 오류 지점 확인</span><br><span class="line"></span><br><span class="line">frame [스택 번호] : 스택 번호의 스택 프레임으로 이동</span><br><span class="line"></span><br><span class="line">up : 상위 스택 프레임으로 이동</span><br><span class="line">up [n] : n번 만큼 상위 스택 프레임으로 이동</span><br><span class="line"></span><br><span class="line">down : 하위 스택 프레임으로 이동</span><br><span class="line">down [n] : 숫자만큼 하위 스택 프레임으로 이동</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="gt-b-breakpoint"><a href="#gt-b-breakpoint" class="headerlink" title="-&gt; b (breakpoint)"></a>-&gt; b (breakpoint)</h3><ul>
+<li>브레이크 포인트</li>
+<li>i(info) b(breakpoint) 명령어로 현재 설정된 브레이크 포인트의 목록을 확인</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">b func : func 함수의 시작 부분에 브레이크 포인트 설정</span><br><span class="line"></span><br><span class="line">b n : n번째 행에 브레이크 포인트 설정</span><br><span class="line"></span><br><span class="line">b +n : 현재 행에서 n번째 행 이후 브레이크 포인트 설정</span><br><span class="line"></span><br><span class="line">b -n : 현재 행에서 n번째 행 이전 브레이크 포인트 설정</span><br><span class="line"></span><br><span class="line">b *0x1122334 : 특정 주소에 브레이크 포인트 설정</span><br><span class="line"></span><br><span class="line">tb : 기능과 문법은 명령어 b와 동일하나, 1회용 브레이크 포인트</span><br><span class="line"></span><br><span class="line">info b : 현재 브레이크 포인트 지우기</span><br><span class="line"></span><br><span class="line">cl(clear) : 특정 symbol에 걸려있는 breakpoint나 watchpoint를 제거할 때 사용</span><br><span class="line">cl [변수명 or 함수명] : 변수명이나 함수명에 걸린 breakpoint나 watchpoint 제거</span><br><span class="line"></span><br><span class="line">d(delete) : 모든 breakpoint 지우기</span><br><span class="line">d [n] : n번째 breakpoint 제거</span><br><span class="line"></span><br><span class="line">disable br : 모든 브레이크 포인트 비활성화</span><br><span class="line">disable br [n ...] : n번째 브레이크 포인트 비활성화</span><br><span class="line"></span><br><span class="line">enable br : 모든 브레이크 포인트 활성화</span><br><span class="line">enable br [n ...] : n번째 브레이크 포인트 활성화</span><br><span class="line"></span><br><span class="line">b n if var == N : var 변수의 값이 N일 때 n번 행에 브레이크 포인트 설정</span><br><span class="line"></span><br><span class="line">condition [n] var == 0 : var 변수가 0일 때 n번 브레이크 포인트 동작</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ex)</span><br><span class="line">b main</span><br><span class="line">b 10</span><br><span class="line">b +3</span><br><span class="line">b -3</span><br><span class="line">cl main</span><br><span class="line">cl 10</span><br><span class="line">cl test:main</span><br><span class="line">cl test:10</span><br><span class="line">d</span><br><span class="line">d 5</span><br><span class="line">disable br</span><br><span class="line">disable br 1 3</span><br><span class="line">enable br</span><br><span class="line">enable br 1 3</span><br><span class="line">b 10 if var == 0</span><br><span class="line">condition 3 if var == 0</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="gt-watch"><a href="#gt-watch" class="headerlink" title="-&gt; watch"></a>-&gt; watch</h3><ul>
+<li>특정 변수를 watchpoints로 걸어두어 소스의 지점에 거는 것이 아닌 변수 자체에 break를 설정</li>
+<li>watchpoints가 걸린 변수의 값이 변할 때 break 걸리므로, 변수값의 변화와 코드의 변화를 확인할 때 유용</li>
+<li>b와 동일하게 i(info) 명령어를 사용 가능</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">watch [변수명] : 변수에 값이 써질 때 브레이크</span><br><span class="line">rwatch [변수명] : 변수의 값이 읽혀질 때 브레이크</span><br><span class="line">awatch [변수명] : 변수에 읽기, 쓰기 경우에 브레이크</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ex)</span><br><span class="line">watch a</span><br><span class="line">rwatch b</span><br><span class="line">awatch c</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="gt-x-examine-메모리-주소를-직접-조사하거나-실행될-때-조사하는-용도"><a href="#gt-x-examine-메모리-주소를-직접-조사하거나-실행될-때-조사하는-용도" class="headerlink" title="-&gt; x(examine, 메모리 주소를 직접 조사하거나 실행될 때 조사하는 용도)"></a>-&gt; x(examine, 메모리 주소를 직접 조사하거나 실행될 때 조사하는 용도)</h3><ul>
+<li>조사할 메모리의 위치와 메모리를 어떻게 보여줄지에 대한 두 개의 인자가 필요.</li>
+<li>표현 형식도 한 글자의 축약형을 사용.</li>
+<li>표현 형식 문자 앞에 숫자로 얼마나 많이 출력할 것인지 표기.</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line">x/[범위][출력 형식][범위의 단위] [메무리 주소나 함수명]</span><br><span class="line"></span><br><span class="line">표현 형식 문자</span><br><span class="line">o : 8진법으로 보여준다.</span><br><span class="line">x : 16진법으로 보여준다.</span><br><span class="line">u, d : 부호가 없는(unsigned) 표준 10진법으로 보여준다.</span><br><span class="line">t : 2진법으로 보여준다.</span><br><span class="line">c : 최초 1byte 값을 문자형으로 출력</span><br><span class="line">f : 부동소수점</span><br><span class="line">a : 가장 가까운 심볼의 오프셋 출력</span><br><span class="line">s : 문자열로 출력</span><br><span class="line">i : 어셈블리 형식으로 출력</span><br><span class="line">z : hex, zero padded on the left</span><br><span class="line"></span><br><span class="line">표시 유닛 크기(범위의 단위) 문자</span><br><span class="line">b(byte)     : 1byte</span><br><span class="line">h(Halfword) : 2byte</span><br><span class="line">w(word)     : 4byte</span><br><span class="line">g(Giant)    : 8byte</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ex)</span><br><span class="line">x/10 main</span><br><span class="line">x/20 $rip</span><br><span class="line"></span><br><span class="line">x/o 0x11223344</span><br><span class="line">x/x $rip</span><br><span class="line">x/u $rip</span><br><span class="line">x/t $rip</span><br><span class="line"></span><br><span class="line">x/6x $rip</span><br><span class="line">x/12x $rip</span><br><span class="line"></span><br><span class="line">x/8xb main</span><br><span class="line">x/4xh main</span><br><span class="line"></span><br><span class="line">x/10i 0x1122334</span><br><span class="line"></span><br><span class="line">---------------</span><br><span class="line"></span><br><span class="line">(gdb) x/8x 0x7fffffffd910</span><br><span class="line">0x7fffffffd910:    0x05ffda98    0x00000000    0x00000002    0x00000001</span><br><span class="line">0x7fffffffd920:    0xffffd940    0x00007fff    0x004005cc    0x00000000</span><br><span class="line"> </span><br><span class="line">(gdb) x/8o 0x7fffffffd910</span><br><span class="line">0x7fffffffd910:    0577755230    0    02    01</span><br><span class="line">0x7fffffffd920:    037777754500    077777    020002714    0</span><br><span class="line"> </span><br><span class="line">(gdb) x/8c 0x7fffffffd910</span><br><span class="line">0x7fffffffd910:    -104 &#x27;\230&#x27;    -38 &#x27;\332&#x27;    -1 &#x27;\377&#x27;    5 &#x27;\005&#x27;    0 &#x27;\000&#x27;    0 &#x27;\000&#x27;    0 &#x27;\000&#x27;    0 &#x27;\000&#x27;</span><br><span class="line"> </span><br><span class="line">(gdb) x/8s 0x7fffffffd910</span><br><span class="line">0x7fffffffd910:    &quot;\230\332\377\005&quot;</span><br><span class="line">0x7fffffffd915:    &quot;&quot;</span><br><span class="line">0x7fffffffd916:    &quot;&quot;</span><br><span class="line">0x7fffffffd917:    &quot;&quot;</span><br><span class="line">0x7fffffffd918:    &quot;\002&quot;</span><br><span class="line">0x7fffffffd91a:    &quot;&quot;</span><br><span class="line">0x7fffffffd91b:    &quot;&quot;</span><br><span class="line">0x7fffffffd91c:    &quot;\001&quot;</span><br><span class="line"> </span><br><span class="line">(gdb) x/8d 0x7fffffffd910</span><br><span class="line">0x7fffffffd910:    -104    -38    -1    5    0    0    0    0</span><br><span class="line"> </span><br><span class="line">(gdb) x/8t 0x7fffffffd910</span><br><span class="line">0x7fffffffd910:    10011000    11011010    11111111    00000101    00000000    00000000    00000000    00000000</span><br><span class="line"> </span><br><span class="line">(gdb) x/8f 0x7fffffffd910</span><br><span class="line">0x7fffffffd910:    4.9729545178123994e-316    2.1219957919534036e-314</span><br><span class="line">0x7fffffffd920:    6.9533558073448912e-310    2.0729947080329522e-317</span><br><span class="line">0x7fffffffd930:    6.9533558073488437e-310    2.1219957919534036e-314</span><br><span class="line">0x7fffffffd940:    6.9533558073464722e-310    2.0730100240679732e-317</span><br><span class="line"> </span><br><span class="line">(gdb) x/8a 0x7fffffffd910</span><br><span class="line">0x7fffffffd910:    0x5ffda98    0x100000002</span><br><span class="line">0x7fffffffd920:    0x7fffffffd940    0x4005cc &lt;func2+29&gt;</span><br><span class="line">0x7fffffffd930:    0x7fffffffd990    0x100000002</span><br><span class="line">0x7fffffffd940:    0x7fffffffd960    0x4005eb &lt;func1+29&gt;</span><br><span class="line"> </span><br><span class="line">(gdb) x/8i 0x7fffffffd910</span><br><span class="line">   0x7fffffffd910:    cwtl   </span><br><span class="line">   0x7fffffffd911:    (bad)  </span><br><span class="line">   0x7fffffffd913:    add    $0x0,%eax</span><br><span class="line">   0x7fffffffd918:    add    (%rax),%al</span><br><span class="line">   0x7fffffffd91a:    add    %al,(%rax)</span><br><span class="line">   0x7fffffffd91c:    add    %eax,(%rax)</span><br><span class="line">   0x7fffffffd91e:    add    %al,(%rax)</span><br><span class="line">   0x7fffffffd920:    rex fcos </span><br><span class="line"> </span><br><span class="line">(gdb) x/8z 0x7fffffffd910</span><br><span class="line">0x7fffffffd910:    0x0000000005ffda98    0x0000000100000002</span><br><span class="line">0x7fffffffd920:    0x00007fffffffd940    0x00000000004005cc</span><br><span class="line">0x7fffffffd930:    0x00007fffffffd990    0x0000000100000002</span><br><span class="line">0x7fffffffd940:    0x00007fffffffd960    0x00000000004005eb</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="gt-p-print"><a href="#gt-p-print" class="headerlink" title="-&gt; p (print)"></a>-&gt; p (print)</h3><ul>
+<li>내부에 존재하는 어떠한 값을 출력해보고 싶을 때 사용</li>
+<li>일반 수식도 지원하므로 변수에 어떤 값을 연산한 결과 등 출력</li>
+<li>메모리 주소를 출력을 위해 &amp; 사용</li>
+<li>메모리 주소에 있는 내용을 출력을 위해 * 사용</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">p [함수명]          : 함수의 주소 출력</span><br><span class="line">p [변수명]          : 해당 변수의 값 출력</span><br><span class="line">p [포인터 변수]     : 포인터 변수의 주소값 출력</span><br><span class="line">p &amp;[변수명]         : 변수의 주소 출력</span><br><span class="line">p *[메모리 주소]    : 메모리 주소의 값 출력</span><br><span class="line">p *[포인터 변수]    : 포인터 변수의 실제 값 출력</span><br><span class="line">p *[포인터]         : struct/class의 배열일 때 배열의 크기를 알림</span><br><span class="line">p $[레지스터명]     : 레지스터의 값 출력</span><br><span class="line">p/[출력형식] [변수명]: 출력 형식에 맞추어 변수값 출력</span><br><span class="line">p [변수명] [연산]   : 변수에 연산한 값 출력</span><br><span class="line">p (캐스팅)[변수명]  : 변수를 캐스팅하여 출력</span><br><span class="line">p [포인터 변수 or 배열]+[n] : 특정 주소 + n번째 위치 출력</span><br><span class="line">p [변수명] = [값]   : 특정 변수의 값을 설정</span><br><span class="line">p &#x27;[파일명]&#x27;::[변수명]      : p 명령어는 지역 변수를 우선시하므로, 동일한 이름의 전역 변수를 사용할 때 :: 를 사용</span><br><span class="line">p [함수명]::[변수명]: 특정 함수에 있는 변수를 확인</span><br><span class="line">p (*this)           : 디버깅 하다가 객체의 내용을 보고 싶을 때, class 내부에서 간단히 사용</span><br><span class="line"></span><br><span class="line">표현 형식 문자</span><br><span class="line">o : 8진법으로 보여준다.</span><br><span class="line">x : 16진법으로 보여준다.</span><br><span class="line">u, d : 부호가 없는(unsigned) 표준 10진법으로 보여준다.</span><br><span class="line">t : 2진법으로 보여준다.</span><br><span class="line">c : 최초 1byte 값을 문자형으로 출력</span><br><span class="line">f : 부동소수점</span><br><span class="line">a : 가장 가까운 심볼의 오프셋 출력</span><br><span class="line">s : 문자열로 출력</span><br><span class="line">i : 어셈블리 형식으로 출력</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ex)</span><br><span class="line">p main</span><br><span class="line">p a</span><br><span class="line">p ptrb</span><br><span class="line">p &amp;a</span><br><span class="line">p *0x1122334</span><br><span class="line">p *ptrb</span><br><span class="line">p $rip</span><br><span class="line">p/t bina</span><br><span class="line">p/o ob</span><br><span class="line">p/x hex</span><br><span class="line">p/c chara</span><br><span class="line">p i * 4 - 2</span><br><span class="line">p (char*)a</span><br><span class="line">p (array[0]+5)</span><br><span class="line">p a=1</span><br><span class="line">p &#x27;test.c&#x27;::a</span><br><span class="line">p func1::a</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="gt-화면에-값을-자동으로-디스플레이"><a href="#gt-화면에-값을-자동으로-디스플레이" class="headerlink" title="-&gt; 화면에 값을 자동으로 디스플레이"></a>-&gt; 화면에 값을 자동으로 디스플레이</h3><ul>
+<li>display 명령어를 이용하면 매 단계가 진행될 때마다 자동으로 변수의 값을 출력</li>
+<li>p를 매번 타이핑 하기 귀찮을 때 유용하며, 동일한 방식으로 출력 형식을 지정</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">display [변수명] : 특정 변수의 값을 매번 출력할</span><br><span class="line">dispaly/[출력 형식] [변수명] : 출력 형식에 맞추어 변수값 출력</span><br><span class="line">undisplay [번호] : 출력하던 display 변수 제거</span><br><span class="line">disable display [번호] : 일시적으로 디스플레이 중단</span><br><span class="line">enable display [번호] : 중단했던 번호 다시 출력</span><br><span class="line"></span><br><span class="line">표현 형식 문자</span><br><span class="line">o : 8진법으로 보여준다.</span><br><span class="line">x : 16진법으로 보여준다.</span><br><span class="line">u, d : 부호가 없는(unsigned) 표준 10진법으로 보여준다.</span><br><span class="line">t : 2진법으로 보여준다.</span><br><span class="line">c : 최초 1byte 값을 문자형으로 출력</span><br><span class="line">f : 부동소수점</span><br><span class="line">a : 가장 가까운 심볼의 오프셋 출력</span><br><span class="line">s : 문자열로 출력</span><br><span class="line">i : 어셈블리 형식으로 출력</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ex)</span><br><span class="line">display a</span><br><span class="line">display/x a</span><br><span class="line">disable display 1</span><br><span class="line">enable display 1</span><br><span class="line">undisplay 1</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="gt-set"><a href="#gt-set" class="headerlink" title="-&gt; set"></a>-&gt; set</h3><ul>
+<li>디버깅 도중에 존재하는 변수의 값을 변경하거나 디버깅에 사용되는 변수를 정의할 때 사용</li>
+<li>set 명령어는 축약어가 존재하지 않음</li>
+<li>p 명령어와 동일하게 &amp;와 *를 지원하므로 특정 메모리의 값도 변경 가능</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">set [변수명] = [값] : 변수의 값 변경</span><br><span class="line">set $[변수명] = [값] : 변수를 정의, 프로그램 내에 존재하는 일반 변수와 구별하기 위해 $를 필수로 붙여줘야 함</span><br><span class="line">set &#123;타입&#125;[주소] = [값] : 특정 메모리에 값을 지정</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ex)</span><br><span class="line">set a = 10;</span><br><span class="line"></span><br><span class="line">set $a = 4;</span><br><span class="line">p env[$a++]</span><br><span class="line"></span><br><span class="line">set &#123;int&#125;0x1122334455 = 100</span><br><span class="line"></span><br><span class="line">set *((int*)0x1122334) = 123321</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="gt-ETC"><a href="#gt-ETC" class="headerlink" title="-&gt; ETC"></a>-&gt; ETC</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">call [함수명(인자)] : 특정 함수를 인자값으로 호출</span><br><span class="line"></span><br><span class="line">jump *[주소] : 주소로 강제 분기</span><br><span class="line"></span><br><span class="line">jump [행번호] : 특정 행으로 강제 분기</span><br><span class="line"></span><br><span class="line">jump [함수명] : 특정 함수로 강제 분기</span><br><span class="line"></span><br><span class="line">show convience : 지금까지 설정한 변수를 확인</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://lacti.github.io/2008/04/01/gdb-simple-help/">https://lacti.github.io/2008/04/01/gdb-simple-help/</a></li>
+<li><a target="_blank" rel="noopener" href="https://mitny.github.io/articles/2016-08/gdb-command">https://mitny.github.io/articles/2016-08/gdb-command</a></li>
+<li><a target="_blank" rel="noopener" href="http://kwanseob.blogspot.com/2012/03/gdb.html">http://kwanseob.blogspot.com/2012/03/gdb.html</a></li>
+</ul>
+<hr>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Slay</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://example.com/2021/03/27/2021-03-27-GDB/">http://example.com/2021/03/27/2021-03-27-GDB/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2021 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2021/11/30/2021-11-30-Commands/">Commands</a>
+            
+            
+            <a class="next" rel="next" href="/2021/03/23/2021-03-23-Ubuntu-installation-commands/">Ubuntu Installation Commands</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Slay | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
