@@ -15,7 +15,7 @@
 
 
 
-<title>Mac OS Installation Commands | Slay(Sean)</title>
+<title>Setting Commands | Slay(Sean)</title>
 
 
 
@@ -195,7 +195,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Mac OS Installation Commands</h1>
+            <h1 class="post-title">Setting Commands</h1>
             
                 <div class="post-meta">
                     
@@ -204,7 +204,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">January 30, 2022&nbsp;&nbsp;10:00:00</a>
+                        Date: <a href="#">August 7, 2021&nbsp;&nbsp;13:30:00</a>
                         </span>
                     
                     
@@ -220,10 +220,14 @@
         </header>
 
         <div class="post-content">
-            <h2 id="install-Packages"><a href="#install-Packages" class="headerlink" title="install Packages"></a>install Packages</h2><h3 id="chromedriver-설치"><a href="#chromedriver-설치" class="headerlink" title="chromedriver 설치"></a>chromedriver 설치</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install --cask chromedriver</span><br><span class="line">xattr -d com.apple.quarantine /usr/<span class="built_in">local</span>/bin/chromedriver</span><br></pre></td></tr></table></figure>
+            <h2 id="kali"><a href="#kali" class="headerlink" title="kali"></a>kali</h2><h3 id="kali-os-release-확인"><a href="#kali-os-release-확인" class="headerlink" title="kali os-release 확인"></a>kali os-release 확인</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/os-release</span><br></pre></td></tr></table></figure>
+
+<h3 id="docker-일반-계정으로-실행"><a href="#docker-일반-계정으로-실행" class="headerlink" title="docker 일반 계정으로 실행"></a>docker 일반 계정으로 실행</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 도커 그룹 생성</span></span><br><span class="line">sudo groupadd docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 현재 유저를 도커 그룹에 포함</span></span><br><span class="line">sudo usermod -aG docker <span class="variable">$USER</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 접근 에러가 발생하지 않게 권한 open</span></span><br><span class="line">sudo chmod 666 /var/run/docker.sock</span><br><span class="line"></span><br><span class="line"><span class="comment"># docker service restart or reboot</span></span><br><span class="line">sudo service docker restart</span><br><span class="line"></span><br><span class="line"><span class="comment"># check</span></span><br><span class="line">docker run hello-world</span><br></pre></td></tr></table></figure>
+
+<h3 id="무선-랜카드-monitor-mode로-전환"><a href="#무선-랜카드-monitor-mode로-전환" class="headerlink" title="무선 랜카드 monitor mode로 전환"></a>무선 랜카드 monitor mode로 전환</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 무선 랜카드 사용 안함으로 변경</span></span><br><span class="line">1. ifconfig [무선 랜카드 이름] down</span><br><span class="line"></span><br><span class="line"><span class="comment"># monitor 모드로 변경</span></span><br><span class="line">2. iwconfig [무선 랜카드 이름] mode monitor</span><br><span class="line"></span><br><span class="line"><span class="comment"># 무선 랜카드 사용함으로 변경</span></span><br><span class="line">3. ifconfig [무선 랜카드 이름] up</span><br><span class="line"></span><br><span class="line"><span class="comment"># 무선 랜카드 정보 보기</span></span><br><span class="line">4. iwconfig</span><br><span class="line">4-1. iwconfig [무선 랜카드 이름]</span><br></pre></td></tr></table></figure>
 
 <hr>
-
+<h2 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h2><h3 id="docker-일반-계정으로-실행-1"><a href="#docker-일반-계정으로-실행-1" class="headerlink" title="docker 일반 계정으로 실행"></a>docker 일반 계정으로 실행</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 도커 그룹 생성</span></span><br><span class="line">sudo groupadd docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 현재 유저를 도커 그룹에 포함</span></span><br><span class="line">sudo usermod -aG docker <span class="variable">$USER</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 접근 에러가 발생하지 않게 권한 open</span></span><br><span class="line">sudo chmod 666 /var/run/docker.sock</span><br><span class="line"></span><br><span class="line"><span class="comment"># docker service restart or reboot</span></span><br><span class="line">sudo service docker restart</span><br><span class="line"></span><br><span class="line"><span class="comment"># check</span></span><br><span class="line">docker run hello-world</span><br></pre></td></tr></table></figure>
         </div>
 
         
@@ -237,7 +241,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2022/01/30/2022-01-30-macos-installation-commands/">http://example.com/2022/01/30/2022-01-30-macos-installation-commands/</a></span>
+                        <span><a href="http://example.com/2021/08/07/2022-08-07-setting-commands/">http://example.com/2021/08/07/2022-08-07-setting-commands/</a></span>
                     </p>
                 
                 
@@ -270,10 +274,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2022/08/07/2022-08-07-installation-commands/">Installation Commands</a>
+                <a class="prev" rel="prev" href="/2021/11/30/2021-11-30-Commands/">Commands</a>
             
             
-            <a class="next" rel="next" href="/2021/12/31/2021-12-31-kali-installation-commands/">Kali Installation Commands</a>
+            <a class="next" rel="next" href="/2021/03/27/2021-03-27-GDB/">GDB</a>
             
         </section>
 

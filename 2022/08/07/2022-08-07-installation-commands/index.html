@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Slay">
+
+
+
+    <meta name="description" content="stone+i">
+
+
+
+<title>Installation Commands | Slay(Sean)</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Slay&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" target="_blank" rel="noopener" href="https://sean.tistory.com">Tistory</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Slay&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" target="_blank" rel="noopener" href="https://sean.tistory.com">Tistory</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Installation Commands</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Slay</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">August 7, 2022&nbsp;&nbsp;13:00:00</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Note/">Note</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="install-Packages"><a href="#install-Packages" class="headerlink" title="install Packages"></a>install Packages</h1><h2 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h2><h3 id="chromedriver-설치"><a href="#chromedriver-설치" class="headerlink" title="chromedriver 설치"></a>chromedriver 설치</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install --cask chromedriver</span><br><span class="line">xattr -d com.apple.quarantine /usr/<span class="built_in">local</span>/bin/chromedriver</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Kali"><a href="#Kali" class="headerlink" title="Kali"></a>Kali</h2><h3 id="Default-Packages"><a href="#Default-Packages" class="headerlink" title="Default Packages"></a>Default Packages</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="kali-linux-header"><a href="#kali-linux-header" class="headerlink" title="kali linux-header"></a>kali linux-header</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install linux-headers-$(uname -r)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Docker-설치-apt-사용"><a href="#Docker-설치-apt-사용" class="headerlink" title="Docker 설치(apt 사용)"></a>Docker 설치(apt 사용)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># docker.io 설치</span></span><br><span class="line">sudo apt install -y docker.io</span><br><span class="line"></span><br><span class="line"><span class="comment"># 시스템이 켜지면 docker 자동 실행</span></span><br><span class="line">sudo systemctl <span class="built_in">enable</span> docker --now</span><br><span class="line"></span><br><span class="line"><span class="comment"># 도커 실행 명령어</span></span><br><span class="line">docker</span><br></pre></td></tr></table></figure>
+
+<h3 id="docker-ce-community-edition-설치"><a href="#docker-ce-community-edition-설치" class="headerlink" title="docker-ce(community edition) 설치"></a>docker-ce(community edition) 설치</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 패지지 설치</span></span><br><span class="line">sudo apt update &amp;&amp; sudo apt -y install ca-certificates curl gnupg lsb-release</span><br><span class="line"></span><br><span class="line"><span class="comment"># Debian stable version 저장소 설정</span></span><br><span class="line"><span class="built_in">printf</span> <span class="string">&#x27;%s\n&#x27;</span> <span class="string">&quot;deb https://download.docker.com/linux/debian bullseye stable&quot;</span> | sudo tee /etc/apt/sources.list.d/docker-ce.list</span><br><span class="line"></span><br><span class="line"><span class="comment"># GPG 키 가져오기</span></span><br><span class="line">curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/docker-ce-archive-keyring.gpg</span><br><span class="line"></span><br><span class="line"><span class="comment"># apt 업데이트</span></span><br><span class="line">sudo apt update</span><br><span class="line"></span><br><span class="line"><span class="comment"># 설치</span></span><br><span class="line">sudo apt install -y docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
+
+<h3 id="docker-ce-삭제"><a href="#docker-ce-삭제" class="headerlink" title="docker-ce 삭제"></a>docker-ce 삭제</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt purge docker-ce</span><br><span class="line"></span><br><span class="line">sudo rm -rf /var/lib/docker</span><br></pre></td></tr></table></figure>
+
+<h3 id="Docker-삭제"><a href="#Docker-삭제" class="headerlink" title="Docker 삭제"></a>Docker 삭제</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt remove -y docker docker.io docker-engine &amp;&amp; sudo apt autoremove -y</span><br></pre></td></tr></table></figure>
+
+<h3 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># deb 파일 다운로드</span></span><br><span class="line">https://code.visualstudio.com/docs/?dv=linux64_deb</span><br><span class="line"></span><br><span class="line"><span class="comment"># Downloads 디렉토리로 이동</span></span><br><span class="line"><span class="built_in">cd</span> Downloads</span><br><span class="line"></span><br><span class="line"><span class="comment"># deb 파일 설치</span></span><br><span class="line">sudo apt install ./code_&lt;version&gt;_amd64.deb</span><br></pre></td></tr></table></figure>
+
+<h3 id="python2-pip"><a href="#python2-pip" class="headerlink" title="python2 pip"></a>python2 pip</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># pip 파일 다운로드</span></span><br><span class="line">curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># get-pip.py 파일 실행</span></span><br><span class="line">python2 get-pip.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># setuptools 패키지 설치</span></span><br><span class="line">pip install -U setuptools</span><br><span class="line"></span><br><span class="line"><span class="comment"># python2 패키지 설치</span></span><br><span class="line">python2 -m pip install &lt;패키지&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="chromedriver"><a href="#chromedriver" class="headerlink" title="chromedriver"></a>chromedriver</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># chrome deb 파일 다운로드</span></span><br><span class="line">wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb</span><br><span class="line"></span><br><span class="line"><span class="comment"># chrome 설치</span></span><br><span class="line">apt install ./google-chrome-stable_current_amd64.deb</span><br><span class="line"></span><br><span class="line"><span class="comment"># 버전 확인</span></span><br><span class="line">google-chrome --version</span><br><span class="line"></span><br><span class="line"><span class="comment"># 특정 버전 chromedriver 다운로드 할 때</span></span><br><span class="line">wget https://chromedriver.storage.googleapis.com/96.0.4664.45/chromedriver_linux64.zip</span><br></pre></td></tr></table></figure>
+
+<h3 id="iptime-2000UA-무선-랜카드-드라이버"><a href="#iptime-2000UA-무선-랜카드-드라이버" class="headerlink" title="iptime 2000UA 무선 랜카드 드라이버"></a>iptime 2000UA 무선 랜카드 드라이버</h3><ul>
+<li>자신의 kali 버전에 맞는 linux-header가 설치되어 있어야 한다.<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># rtl8812au 설치</span></span><br><span class="line">1. git <span class="built_in">clone</span> https://github.com/aircrack-ng/rtl8812au</span><br><span class="line"></span><br><span class="line"><span class="comment"># 디렉토리 이동</span></span><br><span class="line">2. <span class="built_in">cd</span> rtl8812au</span><br><span class="line"></span><br><span class="line"><span class="comment"># dkms를 이용하여 make. (dkms가 없으면 위의 dkms 설치 명령어를 참고하여 설치해줘야 함)</span></span><br><span class="line">3. sudo make dkms_install</span><br><span class="line"></span><br><span class="line">    <span class="comment"># dkms를 사용 안하고 make 명령어로만 하고 싶다면 3번 명령어 대신 이 명령어를 사용</span></span><br><span class="line">    3-1. sudo make &amp;&amp; sudo make install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 확인</span></span><br><span class="line">4. modprobe -a rtl8812au</span><br><span class="line"></span><br><span class="line"><span class="comment"># tip</span></span><br><span class="line">TIP) make 명령어 사용 시 쓰레드를 여러개 쓰고 싶다면 <span class="string">&#x27;-j&#x27;</span> 옵션을 사용하면 된다. (-j [쓰레드 수])</span><br><span class="line">ex) make -j4</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="openvas"><a href="#openvas" class="headerlink" title="openvas"></a>openvas</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">kali.org/tools/gvm</span><br><span class="line"><span class="comment"># openvas 설치</span></span><br><span class="line">apt install openvas</span><br><span class="line"></span><br><span class="line"><span class="comment"># gvm 설치</span></span><br><span class="line">apt install gvm</span><br><span class="line"></span><br><span class="line"><span class="comment"># gvm setup 체크</span></span><br><span class="line">gvm-check-setup</span><br><span class="line"></span><br><span class="line"><span class="comment"># openvas NVT 설정</span></span><br><span class="line">gvm-feed-update</span><br><span class="line"></span><br><span class="line"><span class="comment"># openvas setting</span></span><br><span class="line">gvm-setup</span><br><span class="line"></span><br><span class="line"><span class="comment"># web에서 접속 가능하도록 아이디와 비번 설정</span></span><br><span class="line">runuser -u _gvm --gvmd --user=admin --new-password=&lt;패스워드&gt;</span><br><span class="line">or</span><br><span class="line">gvmd --user=admin --new-password=&lt;패스워드&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># user 확인</span></span><br><span class="line">runuser -u _gvm -- gvmd --get-users</span><br><span class="line">or</span><br><span class="line">gvmd --get-users</span><br><span class="line"></span><br><span class="line"><span class="comment"># openvas start</span></span><br><span class="line">gvm-start</span><br><span class="line"></span><br><span class="line"><span class="comment">#openvas stop</span></span><br><span class="line">gvm-stop</span><br><span class="line"></span><br><span class="line"><span class="comment"># error 떴을 때</span></span><br><span class="line">1. chmod 666 /var/<span class="built_in">log</span>/gvm/openvas.log</span><br><span class="line">2. gvm-start</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h2><h3 id="Default-Packages-1"><a href="#Default-Packages-1" class="headerlink" title="Default Packages"></a>Default Packages</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update -y</span><br><span class="line">sudo apt upgrade -y</span><br><span class="line">sudo apt install -y net-tools build-essential make gcc netcat git curl wget ssh gdb vim zsh \</span><br><span class="line">ruby-full python python-dev python-setuptools python-capstone libssl-dev libffi-dev python3 python3-pip \</span><br><span class="line">python3-dev python3-setuptools libc6-i386 libc6-dbg gcc-multilib</span><br><span class="line">sudo apt autoremove -y</span><br></pre></td></tr></table></figure>
+
+<h3 id="python-pip-설치"><a href="#python-pip-설치" class="headerlink" title="python-pip 설치"></a>python-pip 설치</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt install -y python python3 </span><br><span class="line">curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py &amp;&amp; python3 get-pip.py &amp;&amp; rm get-pip.py</span><br><span class="line">python -m pip install --upgrade pip</span><br></pre></td></tr></table></figure>
+
+<h3 id="apache2-설치"><a href="#apache2-설치" class="headerlink" title="apache2 설치"></a>apache2 설치</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">apt install apache2</span><br><span class="line">apt install php</span><br><span class="line"></span><br><span class="line">service apache2 start</span><br><span class="line">service apache2 restart</span><br><span class="line">service apache2 stop</span><br></pre></td></tr></table></figure>
+
+<h3 id="nodejs-설치"><a href="#nodejs-설치" class="headerlink" title="nodejs 설치"></a>nodejs 설치</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">node.js v12.x : sudo curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -</span><br><span class="line"></span><br><span class="line">node.js v12.x : sudo curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -</span><br><span class="line"></span><br><span class="line">sudo apt install -y nodejs</span><br></pre></td></tr></table></figure>
+
+<h3 id="chrome-설치"><a href="#chrome-설치" class="headerlink" title="chrome 설치"></a>chrome 설치</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># chrome deb 파일 다운로드</span></span><br><span class="line">wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb</span><br><span class="line"></span><br><span class="line"><span class="comment"># chrome 설치</span></span><br><span class="line">apt install ./google-chrome-stable_current_amd64.deb</span><br><span class="line"></span><br><span class="line"><span class="comment"># 버전 확인</span></span><br><span class="line">google-chrome --version</span><br><span class="line"></span><br><span class="line"><span class="comment"># 특정 버전 chromedriver 다운로드 할 때</span></span><br><span class="line">wget https://chromedriver.storage.googleapis.com/96.0.4664.45/chromedriver_linux64.zip</span><br></pre></td></tr></table></figure>
+
+<h3 id="Gitlab"><a href="#Gitlab" class="headerlink" title="Gitlab"></a>Gitlab</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt-get install -y curl openssh-server ca-certificates</span><br><span class="line"></span><br><span class="line">sudo apt-get install -y postfix</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/</span><br><span class="line">script.deb.sh | sudo bash</span><br><span class="line"></span><br><span class="line">sudo EXTERNAL_URL=<span class="string">&quot;http://gitlab.example.com&quot;</span> apt-get install gitlab-ee</span><br></pre></td></tr></table></figure>
+
+<h3 id="docker-설치"><a href="#docker-설치" class="headerlink" title="docker 설치"></a>docker 설치</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 패키지 업데이트 및 업그레이드</span></span><br><span class="line">sudo apt update &amp;&amp; sudo apt upgrade</span><br><span class="line"></span><br><span class="line"><span class="comment"># 필수 패키지 설치</span></span><br><span class="line">sudo apt install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common</span><br><span class="line"></span><br><span class="line"><span class="comment"># docker의 GPG Key 인증을 하도록 한다.</span></span><br><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</span><br><span class="line"></span><br><span class="line"><span class="comment"># docker repository 등록</span></span><br><span class="line"><span class="comment"># 자신의 시스템 환경에 맞추어 arch의 값 변경</span></span><br><span class="line"><span class="comment"># 자신의 시스템 아키텍쳐 확인은 &quot;arch&quot; 명령어로 확인 가능</span></span><br><span class="line">sudo add-apt-repository <span class="string">&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu <span class="subst">$(lsb_release -cs)</span> stable&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># docker 패키지 설치</span></span><br><span class="line">sudo apt update &amp;&amp; sudo apt install -y docker-ce docker-ce-cli containerd.io</span><br><span class="line"></span><br><span class="line"><span class="comment"># 시스템 부팅 시 docker가 시작되도록 설정 및 실행</span></span><br><span class="line">sudo systemctl <span class="built_in">enable</span> docker &amp;&amp; service docker start</span><br><span class="line"></span><br><span class="line"><span class="comment"># 서비스 상태 확인</span></span><br><span class="line">service docker status</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># portainer 설치</span></span><br><span class="line">mkdir -p /data/portainer</span><br><span class="line"></span><br><span class="line"><span class="comment"># docker run 명령으로 실행</span></span><br><span class="line">docker run --name portainer -p 9000:9000 -d --restart always -v /data/portainer:/data -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer</span><br><span class="line"></span><br><span class="line"><span class="comment"># 브라우저에서 아래의 url을 입력하여 이동</span></span><br><span class="line">http://127.0.0.1:9000</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Cent-OS"><a href="#Cent-OS" class="headerlink" title="Cent OS"></a>Cent OS</h2><h3 id="Gitlab-설치"><a href="#Gitlab-설치" class="headerlink" title="Gitlab 설치"></a>Gitlab 설치</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y curl policycoreutils-python openssh-server</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> sshd</span><br><span class="line">sudo systemctl start sshd</span><br><span class="line">sudo firewall-cmd --permanent --add-service=http</span><br><span class="line">sudo systemctl reload firewalld</span><br><span class="line">sudo yum install postfix</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> postfix</span><br><span class="line">sudo systemctl start postfix</span><br><span class="line">curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rpm.sh | sudo bash</span><br><span class="line">sudo EXTERNAL_URL=<span class="string">&quot;http://gitlab.example.com&quot;</span> yum install -y gitlab-ee</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><h3 id="Gitlab-설치-및-실행"><a href="#Gitlab-설치-및-실행" class="headerlink" title="Gitlab 설치 및 실행"></a>Gitlab 설치 및 실행</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">docker run --detach \</span><br><span class="line">    --hostname gitlab.example.com \</span><br><span class="line">    --publish 443:443 --publish 80:80 --publish 22:22 \</span><br><span class="line">    --name gitlab \</span><br><span class="line">    --restart always \</span><br><span class="line">    --volume /srv/gitlab/config:/etc/gitlab \</span><br><span class="line">    --volume /srv/gitlab/logs:/var/<span class="built_in">log</span>/gitlab \</span><br><span class="line">    --volume /srv/gitlab/data:/var/opt/gitlab \</span><br><span class="line">    gitlab/gitlab-ce:latest</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><h3 id="Docker-설치-docker-공식"><a href="#Docker-설치-docker-공식" class="headerlink" title="Docker 설치(docker 공식)"></a>Docker 설치(docker 공식)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -s &lt;https://get.docker.com&gt; | sudo sh</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="Kali-1"><a href="#Kali-1" class="headerlink" title="Kali"></a>Kali</h1><h2 id="web-hacking-environment-using-docker"><a href="#web-hacking-environment-using-docker" class="headerlink" title="web hacking environment(using docker)"></a>web hacking environment(using docker)</h2><p>warning)여러 환경을 사용 시에는 dokcer run의 호스트 port 번호를 다르게 지정해야 한다.<br>ex) dvwa - 81:80, bwapp - 82:80, nowasp - 83:80, webgoat - 84:80</p>
+<h3 id="pentestlab을-사용하여-환경-구축-All-in-one"><a href="#pentestlab을-사용하여-환경-구축-All-in-one" class="headerlink" title="pentestlab을 사용하여 환경 구축(All in one)"></a>pentestlab을 사용하여 환경 구축(All in one)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># pentestlab 레포지토리 받아오기</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/eystsen/pentestlab.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># directory 이동</span></span><br><span class="line"><span class="built_in">cd</span> pentestlab</span><br><span class="line"></span><br><span class="line"><span class="comment"># install 스크립트 파일 실행</span></span><br><span class="line">./install_docker_kali_x64.sh -f</span><br><span class="line"></span><br><span class="line"><span class="comment"># pentest.sh 실행하여 원하는 프로그램 실행</span></span><br><span class="line">./pentest.sh start &lt;모의 해킹 환경 프로그램&gt;</span><br><span class="line">ex) ./pentest.sh start bwapp</span><br></pre></td></tr></table></figure>
+
+<h3 id="dvwa"><a href="#dvwa" class="headerlink" title="dvwa"></a>dvwa</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># web-dvwa 이미지 다운로드</span></span><br><span class="line">sudo docker pull vulnerables/web-dvwa</span><br><span class="line"></span><br><span class="line"><span class="comment"># web-dvwa 실행</span></span><br><span class="line">sudo docker run -p 80:80 vulnerables/web-dvwa</span><br><span class="line"></span><br><span class="line"><span class="comment"># web-dvwa 접속</span></span><br><span class="line"><span class="comment"># ID : admin, PW : password </span></span><br><span class="line">http://localhost:80/login.php</span><br></pre></td></tr></table></figure>
+
+<h3 id="bwapp"><a href="#bwapp" class="headerlink" title="bwapp"></a>bwapp</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bwapp 이미지 다운로드</span></span><br><span class="line">sudo docker pull raesene/bwapp</span><br><span class="line"></span><br><span class="line"><span class="comment"># bwapp 이미지 실행</span></span><br><span class="line">sudo docker run -d -p 80:80 raesene/bwapp</span><br><span class="line"></span><br><span class="line"><span class="comment"># bwapp 설치</span></span><br><span class="line">http://localhost:80/install.php</span><br><span class="line"></span><br><span class="line"><span class="comment"># bwapp 접속</span></span><br><span class="line">http://localhost:80/login.php</span><br><span class="line">ID : bee / PW : bug</span><br></pre></td></tr></table></figure>
+
+<h3 id="nowasp"><a href="#nowasp" class="headerlink" title="nowasp"></a>nowasp</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># nowasp 이미지 다운로드</span></span><br><span class="line">sudo docker pull citizenstig/nowasp</span><br><span class="line"></span><br><span class="line"><span class="comment"># nowasp 이미지 실행</span></span><br><span class="line">sudo docker run -p 80:80 citizenstig/nowasp</span><br><span class="line"></span><br><span class="line"><span class="comment"># nowasp 접속</span></span><br><span class="line">http://localhost:80</span><br></pre></td></tr></table></figure>
+
+<h3 id="webgoat"><a href="#webgoat" class="headerlink" title="webgoat"></a>webgoat</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># webgoat 이미지 다운로드</span></span><br><span class="line">sudo docker pull webgoat/webgoat-8.0</span><br><span class="line"></span><br><span class="line"><span class="comment"># webgoat 실행</span></span><br><span class="line">sudo docker run -p 80:8080 webgoat/webgoat-8.0</span><br><span class="line"></span><br><span class="line"><span class="comment"># webgoat 접속</span></span><br><span class="line">http://localhost:80/Webgoat/login</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h1><h2 id="Pwnable"><a href="#Pwnable" class="headerlink" title="Pwnable"></a>Pwnable</h2><h3 id="pwntools-설치"><a href="#pwntools-설치" class="headerlink" title="pwntools 설치"></a>pwntools 설치</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pwntools</span><br></pre></td></tr></table></figure>
+
+<h3 id="docker-Ubuntu-gdb-gef-설치"><a href="#docker-Ubuntu-gdb-gef-설치" class="headerlink" title="docker Ubuntu gdb-gef 설치"></a>docker Ubuntu gdb-gef 설치</h3><ol>
+<li><p>install default packages</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">apt update -y &amp;&amp; apt upgrade -y</span><br><span class="line">apt install gdb curl vim wget python3 python3-pip python3-dev git libssl-dev libffi-dev build-essential -y</span><br><span class="line">python3 -m pip install --upgrade pip</span><br><span class="line">python3 -m pip install --upgrade pwntools</span><br><span class="line">sudo apt install libcapstone-dev -y</span><br></pre></td></tr></table></figure></li>
+<li><p>install pwngdb</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/pwndbg/pwndbg</span><br><span class="line"><span class="built_in">cd</span> pwndbg</span><br><span class="line">./setup.sh</span><br></pre></td></tr></table></figure></li>
+<li><p>install gef</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span></span><br><span class="line">wget -O ~/.gdbinit-gef.py -q http://gef.blah.cat/py</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">source</span> ~/.gdbinit-gef.py &gt;&gt; ~/.gdbinit</span><br><span class="line"></span><br><span class="line">&gt; bash 에러 뜰 시</span><br><span class="line">sudo dpkg-reconfigure dash -&gt; 아니오[no] 선택</span><br><span class="line"></span><br><span class="line">&gt; gdb가 gef로 바뀌지 않는다면</span><br><span class="line"><span class="built_in">cd</span> &amp;&amp; ls -al</span><br><span class="line">sudo sed -i <span class="string">&#x27;s/\\u27a4 /&gt;/g&#x27;</span> ~/.gdbinit-gef.py</span><br></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<h2 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/hugsy/gef">https://github.com/hugsy/gef</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.naver.com/PostView.nhn?blogId=pdg0615&amp;logNo=221008755420&amp;categoryNo=0&amp;parentCategoryNo=0&amp;viewDate=&amp;currentPage=1&amp;postListTopCurrentPage=1&amp;from=postView">http://blog.naver.com/PostView.nhn?blogId=pdg0615&amp;logNo=221008755420&amp;categoryNo=0&amp;parentCategoryNo=0&amp;viewDate=&amp;currentPage=1&amp;postListTopCurrentPage=1&amp;from=postView</a></li>
+</ul>
+<hr>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Slay</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://example.com/2022/08/07/2022-08-07-installation-commands/">http://example.com/2022/08/07/2022-08-07-installation-commands/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2021 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2022/01/30/2022-01-30-macos-installation-commands/">Mac OS Installation Commands</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Slay | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
