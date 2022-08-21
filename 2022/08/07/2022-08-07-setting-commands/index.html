@@ -228,6 +228,9 @@
 
 <hr>
 <h2 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h2><h3 id="docker-일반-계정으로-실행-1"><a href="#docker-일반-계정으로-실행-1" class="headerlink" title="docker 일반 계정으로 실행"></a>docker 일반 계정으로 실행</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 도커 그룹 생성</span></span><br><span class="line">sudo groupadd docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 현재 유저를 도커 그룹에 포함</span></span><br><span class="line">sudo usermod -aG docker <span class="variable">$USER</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 접근 에러가 발생하지 않게 권한 open</span></span><br><span class="line">sudo chmod 666 /var/run/docker.sock</span><br><span class="line"></span><br><span class="line"><span class="comment"># docker service restart or reboot</span></span><br><span class="line">sudo service docker restart</span><br><span class="line"></span><br><span class="line"><span class="comment"># check</span></span><br><span class="line">docker run hello-world</span><br></pre></td></tr></table></figure>
+
+<hr>
+
         </div>
 
         
