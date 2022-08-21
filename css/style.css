@@ -187,7 +187,7 @@ body:before {
 }
 body.dark-theme {
   background-color: #292a2d;
-  color: #05fa22;
+  color: #05ff4c;
   transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
 }
 a {
@@ -905,7 +905,7 @@ header label {
   margin-right: 0.5em;
 }
 .dark-theme .post-content blockquote {
-  color: #a9a9b3;
+  color: #05ff4c;
   background-color: #3e3e3e;
   border-left: 2px solid #dcdcdc;
 }
@@ -1013,10 +1013,11 @@ header label {
 }
 .post-content figure.highlight .gutter {
   width: 10px;
-  color: #d0d0d0;
+  color: #0dfbff;
 }
 .post-content figure.highlight .gutter pre {
   margin: 0;
+  background-color: #000;
 }
 .post-tags {
   padding: 1rem 0 1rem;
@@ -1163,7 +1164,7 @@ header label {
     transition: 0.25s margin 0.25s, 0.25s transform;
   }
   .dark-theme .navbar-mobile .container .navbar-header .menu-toggle span {
-    background: #a9a9b3;
+    background: #05ff4c;
   }
   .navbar-mobile .container .navbar-header .menu-toggle span:nth-child(1) {
     margin-bottom: 8px;

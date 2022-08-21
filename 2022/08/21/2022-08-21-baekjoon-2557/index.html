@@ -15,7 +15,7 @@
 
 
 
-<title>[C Windows Tool]sum_all_entered_numbers() | Slay(Sean)</title>
+<title>[Baekjoon]2557 | Slay(Sean)</title>
 
 
 
@@ -195,7 +195,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">[C Windows Tool]sum_all_entered_numbers()</h1>
+            <h1 class="post-title">[Baekjoon]2557</h1>
             
                 <div class="post-meta">
                     
@@ -204,14 +204,14 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">August 21, 2022&nbsp;&nbsp;17:20:00</a>
+                        Date: <a href="#">August 21, 2022&nbsp;&nbsp;17:31:04</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/C-Windows-Toy-Tool/">C Windows Toy Tool</a>
+                                <a href="/categories/algorithm-exercises/">algorithm exercises</a>
                             
                         </span>
                     
@@ -220,7 +220,7 @@
         </header>
 
         <div class="post-content">
-            <h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//system(&quot;mode con cols=60 lines=25&quot;); //cols = 칸/행 (가로)  lines = 줄/열 (세로)</span></span><br><span class="line">    system(<span class="string">&quot;title 모든 수 합해주는 PG&quot;</span>);</span><br><span class="line">    SetConsoleTextAttribute( GetStdHandle( STD_OUTPUT_HANDLE ), <span class="number">3</span>);</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">long</span> a,input, sum = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span> input_1;</span><br><span class="line">	<span class="comment">//system(&quot;cls&quot;);</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;+-----------------------------------+\n&quot;</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;-                                   -\n&quot;</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;-          EX) 1+2+3 ... +10 = 55   -\n&quot;</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;-                                   -\n&quot;</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;- 10개를 더할려면 10을 입력하세요.  -\n&quot;</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;+-----------------------------------+\n&quot;</span>);</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot; \n\n\n\n총 몇개의 수를 더해줄 건가요 : &quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%ld&quot;</span>, &amp;input); </span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(a=<span class="number">0</span>; a&lt;=input; a++)</span><br><span class="line">		sum += a;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n\n\n&quot;</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;+=====================================================+\n&quot;</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;-                                                     -\n&quot;</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;-       %ld의 모든 수를 더한 값은: &#x27;%ld&#x27;입니다.         -\n&quot;</span>,input,sum);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;- (반복하실려면 &#x27;b&#x27;를 종료하실려면 &#x27;q&#x27;를 입력하세요.) -\n&quot;</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;+=====================================================+\n&quot;</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;반복 하시겠습니까, 종료 하시겠습니까: &quot;</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, &amp;input_1);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(input_1 == <span class="string">&#x27;b&#x27;</span>)</span><br><span class="line">		&#123;</span><br><span class="line">		<span class="keyword">return</span> main();</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="keyword">if</span>(input_1 == <span class="string">&#x27;q&#x27;</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	<span class="comment">//return main();</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//for(;;);</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">main()&#123;<span class="built_in">puts</span>(<span class="string">&quot;Hello World!&quot;</span>);&#125;</span><br></pre></td></tr></table></figure>
         </div>
 
         
@@ -234,7 +234,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2022/08/21/2022-08-21-sum-all-entered-numbers-function/">http://example.com/2022/08/21/2022-08-21-sum-all-entered-numbers-function/</a></span>
+                        <span><a href="http://example.com/2022/08/21/2022-08-21-baekjoon-2557/">http://example.com/2022/08/21/2022-08-21-baekjoon-2557/</a></span>
                     </p>
                 
                 
@@ -267,10 +267,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2022/08/21/2022-08-21-add-year-month-day-function/">[C++]add_year_month_day()</a>
+                <a class="prev" rel="prev" href="/2022/08/21/2022-08-21-baekjoon-2558/">[Baekjoon]2558</a>
             
             
-            <a class="next" rel="next" href="/2022/08/21/2022-08-21-connect-to-site-function-v2/">[C Windows Tool]connect_to_site() v2</a>
+            <a class="next" rel="next" href="/2022/08/21/2022-08-21-baekjoon-1330/">[Baekjoon]1330</a>
             
         </section>
 
