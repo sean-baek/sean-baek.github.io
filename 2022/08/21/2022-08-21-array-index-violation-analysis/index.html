@@ -15,7 +15,7 @@
 
 
 
-<title>[Linux system programming] pid | Slay(Sean)</title>
+<title>[C code Analysis] array index violation(배열 인덱스 위반) | Slay(Sean)</title>
 
 
 
@@ -195,7 +195,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">[Linux system programming] pid</h1>
+            <h1 class="post-title">[C code Analysis] array index violation(배열 인덱스 위반)</h1>
             
                 <div class="post-meta">
                     
@@ -204,14 +204,14 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">August 11, 2022&nbsp;&nbsp;22:40:00</a>
+                        Date: <a href="#">August 21, 2022&nbsp;&nbsp;23:00:00</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/Linux-System-Programming/">Linux System Programming</a>
+                                <a href="/categories/C-code-Analysis/">C code Analysis</a>
                             
                         </span>
                     
@@ -220,8 +220,22 @@
         </header>
 
         <div class="post-content">
-            <h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">pid_t</span> pid;</span><br><span class="line">  pid = fork(); <span class="comment">//fork함수 실행(실패 시 -1, 성공 시 부모에게 새로운 pid, 자식에게 0이 반환</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(pid &gt; <span class="number">0</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;parent process %d\n&quot;</span>, getpid());</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span>(pid==<span class="number">0</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;child process %d\n&quot;</span>,getpid());</span><br><span class="line">    pid = fork();</span><br><span class="line">    <span class="keyword">if</span>(pid&gt;<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;child process %d\n&quot;</span>, getpid());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;grand child %d\n&quot;</span>, getpid());</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;error\n&quot;</span>);</span><br><span class="line">  <span class="comment">//system(&quot;ps | grep (현재 파일이 있는 디렉토리 이름)&quot;);</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i, j;</span><br><span class="line">    <span class="keyword">int</span> arrA[<span class="number">2</span>][<span class="number">4</span>] = &#123;&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;, &#123;<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>&#125;&#125;;</span><br><span class="line">    <span class="keyword">int</span> arrB[<span class="number">4</span>][<span class="number">2</span>]=&#123;<span class="number">0</span>, &#125;;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> row = <span class="keyword">sizeof</span>(arrA[<span class="number">0</span>]) / <span class="keyword">sizeof</span>(<span class="keyword">int</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> col = <span class="keyword">sizeof</span>(arrA) / <span class="keyword">sizeof</span>(arrA[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;col; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;row; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            arrB[j][i] = arrA[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, arrB[i][j]);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<hr>
+<h1 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h1><p>arrA - 1 2 3 4  5 6 7 8<br>arrB - 0</p>
+<hr>
+<p>arrB[0][0] = 1(arrA[0][0]);<br>arrB[1][0] = 2(arrA[0][1]);<br>arrB[2][0] = 3(arrA[0][2]);<br>arrB[3][0] = 4(arrA[0][3]);</p>
+<p>이중 for문을 다 돌았을 때 i = 0, j = 4</p>
+<p>print arrB[0][4] - 3</p>
+<p>arrB[0][0] - 1<br>arrB[0][1] - ?<br>arrB[1][0] - 2<br>arrB[1][1] - ?<br>arrB[2][0] - 3</p>
+<hr>
+<p>다시 첫번째 for문으로 돌아가서</p>
+<p>i++ 한 결과 i = 1이 되고 j = 0으로 다시 루프</p>
+<p>arrB[0][1] = 5(arrA[1][0])<br>arrB[1][1] = 6(arrA[1][1])<br>arrB[2][1] = 7(arrA[1][2])<br>arrB[3][1] = 8(arrA[1][3])</p>
+<p>이중 for문을 다 돌았을 때 i = 1, j = 4</p>
+<p>print arrB[1][4] - 4</p>
+<p>arrB[1][0] - 2<br>arrB[1][1] - 6<br>arrB[2][0] - 3<br>arrB[2][1] - 7<br>arrB[3][0] - 4</p>
 <hr>
 
         </div>
@@ -237,7 +251,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2022/08/11/2022-08-21-pid/">http://example.com/2022/08/11/2022-08-21-pid/</a></span>
+                        <span><a href="http://example.com/2022/08/21/2022-08-21-array-index-violation-analysis/">http://example.com/2022/08/21/2022-08-21-array-index-violation-analysis/</a></span>
                     </p>
                 
                 
@@ -270,10 +284,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2022/08/11/2022-08-21-ssl/">[Linux system programming] ssl</a>
+                <a class="prev" rel="prev" href="/2022/08/21/2022-08-21-structural-data-from-a-memory-point-of-view-analysis/">[C code Analysis] Structural data from a memory point of view</a>
             
             
-            <a class="next" rel="next" href="/2022/08/11/2022-08-11-modular-inverse/">[Python]modular_inverse</a>
+            <a class="next" rel="next" href="/2022/08/21/2022-08-21-ssl/">[Linux system programming] ssl</a>
             
         </section>
 

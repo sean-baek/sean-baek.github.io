@@ -15,7 +15,7 @@
 
 
 
-<title>[jump2python answer] 3-6 | Slay(Sean)</title>
+<title>[Linux system programming] pid | Slay(Sean)</title>
 
 
 
@@ -195,7 +195,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">[jump2python answer] 3-6</h1>
+            <h1 class="post-title">[Linux system programming] pid</h1>
             
                 <div class="post-meta">
                     
@@ -204,14 +204,14 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">August 21, 2022&nbsp;&nbsp;22:00:18</a>
+                        Date: <a href="#">August 21, 2022&nbsp;&nbsp;22:40:00</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/jump2python-exercises/">jump2python exercises</a>
+                                <a href="/categories/Linux-System-Programming/">Linux System Programming</a>
                             
                         </span>
                     
@@ -220,9 +220,7 @@
         </header>
 
         <div class="post-content">
-            <h1 id="Q-리스트-중에서-홀수에만-2를-곱하여-저장하는-다음-코드가-있다"><a href="#Q-리스트-중에서-홀수에만-2를-곱하여-저장하는-다음-코드가-있다" class="headerlink" title="Q : 리스트 중에서 홀수에만 2를 곱하여 저장하는 다음 코드가 있다."></a>Q : 리스트 중에서 홀수에만 2를 곱하여 저장하는 다음 코드가 있다.</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">result = []</span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> numbers:</span><br><span class="line">    <span class="keyword">if</span> n % <span class="number">2</span> == <span class="number">1</span>:</span><br><span class="line">        result.append(n*<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="위-코드를-리스트-내포-list-comprehension-를-사용하여-표현해-보자"><a href="#위-코드를-리스트-내포-list-comprehension-를-사용하여-표현해-보자" class="headerlink" title="위 코드를 리스트 내포(list comprehension)를 사용하여 표현해 보자."></a>위 코드를 리스트 내포(list comprehension)를 사용하여 표현해 보자.</h1><hr>
-<h1 id="answer"><a href="#answer" class="headerlink" title="answer"></a>answer</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>([n * <span class="number">2</span> <span class="keyword">for</span> n <span class="keyword">in</span> numbers <span class="keyword">if</span> n % <span class="number">2</span> == <span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+            <h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">pid_t</span> pid;</span><br><span class="line">  pid = fork(); <span class="comment">//fork함수 실행(실패 시 -1, 성공 시 부모에게 새로운 pid, 자식에게 0이 반환</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(pid &gt; <span class="number">0</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;parent process %d\n&quot;</span>, getpid());</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span>(pid==<span class="number">0</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;child process %d\n&quot;</span>,getpid());</span><br><span class="line">    pid = fork();</span><br><span class="line">    <span class="keyword">if</span>(pid&gt;<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;child process %d\n&quot;</span>, getpid());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;grand child %d\n&quot;</span>, getpid());</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;error\n&quot;</span>);</span><br><span class="line">  <span class="comment">//system(&quot;ps | grep (현재 파일이 있는 디렉토리 이름)&quot;);</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
 
@@ -239,7 +237,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2022/08/21/2022-08-21-jump2python-exercises-answer-3-6/">http://example.com/2022/08/21/2022-08-21-jump2python-exercises-answer-3-6/</a></span>
+                        <span><a href="http://example.com/2022/08/21/2022-08-21-pid/">http://example.com/2022/08/21/2022-08-21-pid/</a></span>
                     </p>
                 
                 
@@ -272,10 +270,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2022/08/21/2022-08-21-pid/">[Linux system programming] pid</a>
+                <a class="prev" rel="prev" href="/2022/08/21/2022-08-21-ssl/">[Linux system programming] ssl</a>
             
             
-            <a class="next" rel="next" href="/2022/08/21/2022-08-21-jump2python-exercises-answer-3-5/">[jump2python answer] 3-5</a>
+            <a class="next" rel="next" href="/2022/08/21/2022-08-21-jump2python-exercises-answer-3-6/">[jump2python answer] 3-6</a>
             
         </section>
 

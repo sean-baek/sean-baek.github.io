@@ -15,7 +15,7 @@
 
 
 
-<title>[jump2python answer] 3-6 | Slay(Sean)</title>
+<title>[C code Analysis] Structural data from a memory point of view | Slay(Sean)</title>
 
 
 
@@ -195,7 +195,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">[jump2python answer] 3-6</h1>
+            <h1 class="post-title">[C code Analysis] Structural data from a memory point of view</h1>
             
                 <div class="post-meta">
                     
@@ -204,14 +204,14 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">August 21, 2022&nbsp;&nbsp;22:00:18</a>
+                        Date: <a href="#">August 21, 2022&nbsp;&nbsp;23:10:00</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/jump2python-exercises/">jump2python exercises</a>
+                                <a href="/categories/C-code-Analysis/">C code Analysis</a>
                             
                         </span>
                     
@@ -220,10 +220,40 @@
         </header>
 
         <div class="post-content">
-            <h1 id="Q-리스트-중에서-홀수에만-2를-곱하여-저장하는-다음-코드가-있다"><a href="#Q-리스트-중에서-홀수에만-2를-곱하여-저장하는-다음-코드가-있다" class="headerlink" title="Q : 리스트 중에서 홀수에만 2를 곱하여 저장하는 다음 코드가 있다."></a>Q : 리스트 중에서 홀수에만 2를 곱하여 저장하는 다음 코드가 있다.</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">result = []</span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> numbers:</span><br><span class="line">    <span class="keyword">if</span> n % <span class="number">2</span> == <span class="number">1</span>:</span><br><span class="line">        result.append(n*<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-<h1 id="위-코드를-리스트-내포-list-comprehension-를-사용하여-표현해-보자"><a href="#위-코드를-리스트-내포-list-comprehension-를-사용하여-표현해-보자" class="headerlink" title="위 코드를 리스트 내포(list comprehension)를 사용하여 표현해 보자."></a>위 코드를 리스트 내포(list comprehension)를 사용하여 표현해 보자.</h1><hr>
-<h1 id="answer"><a href="#answer" class="headerlink" title="answer"></a>answer</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>([n * <span class="number">2</span> <span class="keyword">for</span> n <span class="keyword">in</span> numbers <span class="keyword">if</span> n % <span class="number">2</span> == <span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+            <h1 id="메모리-관점에서의-구조체-데이터"><a href="#메모리-관점에서의-구조체-데이터" class="headerlink" title="메모리 관점에서의 구조체 데이터"></a>메모리 관점에서의 구조체 데이터</h1><h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">stt</span></span></span><br><span class="line"><span class="class">	&#123;</span></span><br><span class="line">		<span class="keyword">short</span> b;</span><br><span class="line">		<span class="keyword">int</span> x;</span><br><span class="line">		<span class="keyword">short</span> s;</span><br><span class="line">		<span class="keyword">long</span> z;</span><br><span class="line">		<span class="keyword">char</span> c[<span class="number">5</span>];</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> a;</span><br><span class="line">		<span class="keyword">char</span> q;</span><br><span class="line">	&#125;stt;</span><br><span class="line"></span><br><span class="line">	stt.b = <span class="number">32767</span>;</span><br><span class="line">	stt.x = <span class="number">4294967295</span>;</span><br><span class="line">	stt.s = <span class="number">32500</span>;</span><br><span class="line">	stt.z = <span class="number">4294967200</span>;</span><br><span class="line">	stt.c[<span class="number">0</span>] = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">	stt.c[<span class="number">1</span>] = <span class="string">&#x27;b&#x27;</span>;</span><br><span class="line">	stt.c[<span class="number">2</span>] = <span class="string">&#x27;c&#x27;</span>;</span><br><span class="line">	stt.c[<span class="number">3</span>] = <span class="string">&#x27;d&#x27;</span>;</span><br><span class="line">	stt.c[<span class="number">4</span>] = <span class="string">&#x27;e&#x27;</span>;</span><br><span class="line">	stt.a = <span class="number">888888888888888888</span>;</span><br><span class="line">	stt.q = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<hr>
+<h1 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h1><p>0xffffcde0: 0xbb 0x00 0x86 0x47 0xf9 0xd9 0x01 0x00<br>0xffffcde8: 0x6d 0x3b 0xff 0xff 0xbe 0xba 0xef 0xbe<br>0xffffcdf0: 0x68 0x6c 0x70 0x6d 0x65 0x00 0x00 0x00<br>0xffffcdf8: 0x1e 0xab 0xdf 0x1e 0xff 0xe1 0xaf 0xde<br>0xffffce00: 0x21 0x00 0x00 0x00 0xf4 0x7f 0x86 0x47</p>
+<p>short : 0x4786 - 18310, 0x8647 - 34375, 0xd9f9 - 55801</p>
+<p>int : 0xbeefbabe - 3203381950, 0xffff3b6d - 4294916973</p>
+<p>short : 0x6d70 - 28016, 0x706d - 28781, 0x0065 = 101</p>
+<p>long : </p>
+<p>0x 1eabdf1effe1afde - 2210105366390354000</p>
+<hr>
+<p>0xffffcde0: 0xbb 0x00 0x86 0x47 0xf9 0xd9 0x01 0x00<br>0xffffcde8: 0x6d 0x3b 0xff 0xff 0xbe 0xba 0xef 0xbe<br>0xffffcdf0: 0x68 0x6c 0x70 0x6d 0x65 0x00 0x00 0x00<br>0xffffcdf8: 0x1e 0xab 0xdf 0x1e 0xff 0xe1 0xaf 0xde<br>0xffffce00: 0x21 0x00 0x00 0x00 0xf4 0x7f 0x86 0x47</p>
+<h2 id="little-endian"><a href="#little-endian" class="headerlink" title="little endian"></a>little endian</h2><p>short : 0x0001 - 1, 0xd9f9 - 55801</p>
+<p>int : 0x478600bb - 1199964347</p>
+<p>short : 0xbeef - 48879, 0xbabe - 47806</p>
+<p>long : 0xffff3b6d - 4294916973</p>
+<p>char[5] : emplh</p>
+<p>long long : deafe1ff1edfab1e - 16046292483195250000</p>
+<p>char : 0x47 - G, 0x21 - !</p>
+<h2 id="big-endian"><a href="#big-endian" class="headerlink" title="big endian"></a>big endian</h2><p>short : 0xbb00 - 47872</p>
+<p>int : 0xf9d90100 - 4191748352</p>
+<p>short : 6d3b - 27963</p>
+<p>long : 3199922110</p>
+<p>char[5] : 0x68 - h, 0x6c - l, 0x70 - p, 0x6d - m, 0x65 - e</p>
+<p>longlong : 0x1eabdf1effe1afde - 2210105366390354000</p>
+<p>char : 0x21 - !, 0x47 - G</p>
+<hr>
+<p>0xffffcde0: 0xbb 0x00 0x86 0x47 0xf9 0xd9 0x01 0x00<br>0xffffcde8: 0x6d 0x3b 0xff 0xff 0xbe 0xba 0xef 0xbe<br>0xffffcdf0: 0x68 0x6c 0x70 0x6d 0x65 0x00 0x00 0x00<br>0xffffcdf8: 0x1e 0xab 0xdf 0x1e 0xff 0xe1 0xaf 0xde<br>0xffffce00: 0x21 0x00 0x00 0x00 0xf4 0x7f 0x86 0x47</p>
+<p>short : 0x8647 - 34375</p>
+<p>int : 0xf9d90100 - 4191748352</p>
+<p>short : 0xffff - 65535</p>
+<p>long : 0xbebaefbe - 3199922110</p>
+<p>char[] : 0x68 - h, 0x6c - l, 0x70 - p, 0x6d - m, 0x65 - e = hlpme</p>
+<p>long long : 0x1eabdf1effe1afde - 2210105366390354000</p>
+<p>char : 0x21 - ‘!’</p>
 <hr>
 
         </div>
@@ -239,7 +269,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2022/08/21/2022-08-21-jump2python-exercises-answer-3-6/">http://example.com/2022/08/21/2022-08-21-jump2python-exercises-answer-3-6/</a></span>
+                        <span><a href="http://example.com/2022/08/21/2022-08-21-structural-data-from-a-memory-point-of-view-analysis/">http://example.com/2022/08/21/2022-08-21-structural-data-from-a-memory-point-of-view-analysis/</a></span>
                     </p>
                 
                 
@@ -272,10 +302,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2022/08/21/2022-08-21-pid/">[Linux system programming] pid</a>
             
-            
-            <a class="next" rel="next" href="/2022/08/21/2022-08-21-jump2python-exercises-answer-3-5/">[jump2python answer] 3-5</a>
+            <a class="next" rel="next" href="/2022/08/21/2022-08-21-array-index-violation-analysis/">[C code Analysis] array index violation(배열 인덱스 위반)</a>
             
         </section>
 
