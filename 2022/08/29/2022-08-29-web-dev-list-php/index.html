@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Slay">
+
+
+
+    <meta name="description" content="stone+i">
+
+
+
+<title>[apache+php+mariaDB Web dev] list.php | Slay(Sean)</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Slay&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" target="_blank" rel="noopener" href="https://sean.tistory.com">Tistory</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Slay&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" target="_blank" rel="noopener" href="https://sean.tistory.com">Tistory</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">[apache+php+mariaDB Web dev] list.php</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Slay</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">August 29, 2022&nbsp;&nbsp;1:15:00</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/codereview/">codereview</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="keyword">require_once</span>(<span class="variable">$_SERVER</span>[<span class="string">&#x27;DOCUMENT_ROOT&#x27;</span>].<span class="string">&#x27;/top.php&#x27;</span>);</span><br><span class="line">    <span class="keyword">include_once</span>(<span class="variable">$_SERVER</span>[<span class="string">&#x27;DOCUMENT_ROOT&#x27;</span>].<span class="string">&#x27;/header.php&#x27;</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line">&lt;!--</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span>=<span class="title">ListDivStyle</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;<span class="title">a</span> <span class="title">href</span>=&quot;<span class="title">http</span>://&lt;?=$<span class="title">_SERVER</span>[&#x27;<span class="title">HTTP_HOST</span>&#x27;]?&gt;/<span class="title">write</span>.<span class="title">php</span>&quot; <span class="title">class</span>=<span class="title">Listbtn</span>&gt;글쓰기&lt;/<span class="title">a</span>&gt;</span></span><br><span class="line"><span class="class">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="class">&lt;<span class="title">div</span> <span class="title">class</span>=<span class="title">ListDivStyle</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;<span class="title">a</span> <span class="title">href</span>=&quot;<span class="title">http</span>://&lt;?=$<span class="title">_SERVER</span>[&#x27;<span class="title">HTTP_HOST</span>&#x27;]?&gt;/<span class="title">list</span>.<span class="title">php</span>&quot; <span class="title">class</span>=<span class="title">Listbtn</span>&gt;목록&lt;/<span class="title">a</span>&gt;</span></span><br><span class="line"><span class="class">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="class">&lt;<span class="title">br</span>&gt;&lt;<span class="title">br</span>&gt;&lt;<span class="title">br</span>&gt;</span></span><br><span class="line"><span class="class">--&gt;</span></span><br><span class="line"><span class="class">&lt;?<span class="title">php</span></span></span><br><span class="line"><span class="class">    $<span class="title">sql</span> = &quot;<span class="title">SELECT</span> * <span class="title">FROM</span> <span class="title">bbs</span>&quot;;</span></span><br><span class="line"><span class="class">    $<span class="title">query_result</span> = $<span class="title">mysqli</span>-&gt;<span class="title">query</span>($<span class="title">sql</span>);</span></span><br><span class="line"><span class="class">    $<span class="title">total_record</span> = $<span class="title">query_result</span>-&gt;<span class="title">num_rows</span>;</span></span><br><span class="line"><span class="class">?&gt;</span></span><br><span class="line"><span class="class">&lt;?<span class="title">php</span> <span class="title">if</span>($<span class="title">total_record</span> == 0) : ?&gt;</span></span><br><span class="line"><span class="class">    글이 없습니다</span></span><br><span class="line"><span class="class">&lt;?<span class="title">php</span></span></span><br><span class="line"><span class="class">    <span class="title">else</span> :</span></span><br><span class="line"><span class="class">        <span class="title">if</span>(<span class="title">isset</span>($<span class="title">page</span>))</span></span><br><span class="line"><span class="class">        </span>&#123;</span><br><span class="line">            <span class="variable">$now_page</span> = <span class="variable">$page</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="variable">$now_page</span> = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 한 페이지에 보여질 글 수</span></span><br><span class="line">        <span class="variable">$show_post_count</span> = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 보여질 글 수 x (현재 페이지 - 1) = 화면에 보여질 시작할 글 record</span></span><br><span class="line">        <span class="comment">// 5 * 4 = 20</span></span><br><span class="line">        <span class="variable">$start_record</span> = <span class="variable">$show_post_count</span> * (<span class="variable">$now_page</span> - <span class="number">1</span>);</span><br><span class="line">        <span class="comment">//echo &quot;start record : &quot;.$start_record.&quot;&lt;br&gt;&quot;;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// end_reccord = 5</span></span><br><span class="line">        <span class="variable">$end_record</span> = <span class="variable">$show_post_count</span>;</span><br><span class="line">        <span class="comment">//echo &quot;end record : &quot;.$end_record.&quot;&lt;br&gt;&quot;;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 시작할 글 record + 5한 값이 bbs 테이블의 record 수보다 많을 경우</span></span><br><span class="line">        <span class="comment">// 즉, 전체 글 수 보다 더 많이 출력되려고 할 경우 </span></span><br><span class="line">        <span class="comment">// 20 + 5 = 25 &gt; 21</span></span><br><span class="line">        <span class="keyword">if</span>((<span class="variable">$start_record</span> + <span class="variable">$end_record</span>) &gt; <span class="variable">$total_record</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 전체 글 수에서 시작 글 수의 값만큼 뺀다.</span></span><br><span class="line">            <span class="comment">// 23 - 20 = 3</span></span><br><span class="line">            <span class="variable">$end_record</span> = <span class="variable">$total_record</span> - <span class="variable">$start_record</span>;</span><br><span class="line">            <span class="comment">//echo &quot;start + end &gt; total : &quot;.$end_record.&quot;&lt;br&gt;&quot;;</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//echo &quot;start_record : &quot;.$start_record.&quot;&lt;br&gt;&quot;;</span></span><br><span class="line">        <span class="comment">//echo &quot;end_record : &quot;.$end_record.&quot;&lt;br&gt;&quot;;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="variable">$sql</span> = <span class="string">&quot;select * from bbs where 1 order by doc_idx desc limit <span class="subst">$start_record</span>, <span class="subst">$end_record</span>&quot;</span>;</span><br><span class="line">        <span class="variable">$query_result</span> = <span class="variable">$mysqli</span>-&gt;query(<span class="variable">$sql</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;table <span class="class"><span class="keyword">class</span>=<span class="title">ListTableStyle</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;<span class="title">thead</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">tr</span> <span class="title">class</span>=<span class="title">ListTrStyle</span>&gt;</span></span><br><span class="line"><span class="class">            &lt;<span class="title">th</span> <span class="title">scope</span>=&quot;<span class="title">col</span>&quot; <span class="title">class</span>=<span class="title">ListThStyle</span>&gt;글번호&lt;/<span class="title">th</span>&gt;</span></span><br><span class="line"><span class="class">            &lt;<span class="title">th</span> <span class="title">scope</span>=&quot;<span class="title">col</span>&quot; <span class="title">class</span>=<span class="title">ListThStyle</span>&gt;제목&lt;/<span class="title">th</span>&gt;</span></span><br><span class="line"><span class="class">            &lt;<span class="title">th</span> <span class="title">scope</span>=&quot;<span class="title">col</span>&quot; <span class="title">class</span>=<span class="title">ListThStyle</span>&gt;작성자 인덱스&lt;/<span class="title">th</span>&gt;</span></span><br><span class="line"><span class="class">            &lt;<span class="title">th</span> <span class="title">scope</span>=&quot;<span class="title">col</span>&quot; <span class="title">class</span>=<span class="title">ListThStyle</span>&gt;글쓴이&lt;/<span class="title">th</span>&gt;</span></span><br><span class="line"><span class="class">            &lt;<span class="title">th</span> <span class="title">scope</span>=&quot;<span class="title">col</span>&quot; <span class="title">class</span>=<span class="title">ListThStyle</span>&gt;날짜&lt;/<span class="title">th</span>&gt;</span></span><br><span class="line"><span class="class">            &lt;<span class="title">th</span> <span class="title">scope</span>=&quot;<span class="title">col</span>&quot; <span class="title">class</span>=<span class="title">ListThStyle</span>&gt;파일&lt;/<span class="title">th</span>&gt;</span></span><br><span class="line"><span class="class">            &lt;<span class="title">th</span> <span class="title">scope</span>=&quot;<span class="title">col</span>&quot; <span class="title">class</span>=<span class="title">ListThStyle</span>&gt;조회수&lt;/<span class="title">th</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;/<span class="title">tr</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;/<span class="title">thead</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;?<span class="title">php</span></span></span><br><span class="line"><span class="class">        <span class="title">while</span>($<span class="title">data</span> = $<span class="title">query_result</span>-&gt;<span class="title">fetch_array</span>()) :</span></span><br><span class="line"><span class="class">    ?&gt;</span></span><br><span class="line"><span class="class">    &lt;<span class="title">tr</span> <span class="title">style</span>=&quot;<span class="title">border</span>:1<span class="title">px</span> <span class="title">solid</span> #<span class="title">bcbcbc</span>&quot;;&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">td</span> <span class="title">scope</span>=&quot;<span class="title">row</span>&quot; <span class="title">class</span>=<span class="title">ListTdStyle</span>&gt;&lt;?=$<span class="title">data</span>[&#x27;<span class="title">doc_idx</span>&#x27;]?&gt;&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">td</span> <span class="title">scope</span>=&quot;<span class="title">row</span>&quot; <span class="title">class</span>=<span class="title">ListTdStyle</span>&gt;&lt;<span class="title">a</span> <span class="title">href</span>=&quot;<span class="title">http</span>://&lt;?= $<span class="title">_SERVER</span>[&#x27;<span class="title">HTTP_HOST</span>&#x27;];?&gt;/<span class="title">view</span>.<span class="title">php</span>?<span class="title">doc_idx</span>=&lt;?=$<span class="title">data</span>[&#x27;<span class="title">doc_idx</span>&#x27;];?&gt;&quot;&gt;&lt;?=$<span class="title">data</span>[&#x27;<span class="title">subject</span>&#x27;]?&gt;&lt;/<span class="title">a</span>&gt;&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">td</span> <span class="title">scope</span>=&quot;<span class="title">row</span>&quot; <span class="title">class</span>=<span class="title">ListTdStyle</span>&gt;&lt;?=$<span class="title">data</span>[&#x27;<span class="title">member_idx</span>&#x27;]?&gt;&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">td</span> <span class="title">scope</span>=&quot;<span class="title">row</span>&quot; <span class="title">class</span>=<span class="title">ListTdStyle</span>&gt;&lt;?=$<span class="title">data</span>[&#x27;<span class="title">writer</span>&#x27;]?&gt;&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">td</span> <span class="title">scope</span>=&quot;<span class="title">row</span>&quot; <span class="title">class</span>=<span class="title">ListTdStyle</span>&gt;&lt;?=$<span class="title">data</span>[&#x27;<span class="title">reg_date</span>&#x27;]?&gt;&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">td</span> <span class="title">scope</span>=&quot;<span class="title">row</span>&quot; <span class="title">class</span>=<span class="title">ListTdStyle</span>&gt;&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">td</span> <span class="title">scope</span>=&quot;<span class="title">row</span>&quot; <span class="title">class</span>=<span class="title">ListTdStyle</span>&gt;&lt;?=$<span class="title">data</span>[&#x27;<span class="title">views</span>&#x27;]?&gt;&lt;/<span class="title">td</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;/<span class="title">tr</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;?<span class="title">php</span> <span class="title">endwhile</span> ?&gt;</span></span><br><span class="line"><span class="class">&lt;/<span class="title">table</span>&gt;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">&lt;?<span class="title">php</span></span></span><br><span class="line"><span class="class">    <span class="title">endif</span></span></span><br><span class="line"><span class="class">?&gt;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;<span class="title">ul</span> <span class="title">class</span>=<span class="title">ListUlStyle</span>&gt;</span></span><br><span class="line"><span class="class">&lt;?<span class="title">php</span></span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">    // 현재 블럭 구하기</span></span><br><span class="line"><span class="class">    // 현재 페이지 / [최대 보여질 블럭 수] = 현재 블럭 </span></span><br><span class="line"><span class="class">    $<span class="title">show_block_count</span>= 2;</span></span><br><span class="line"><span class="class">    $<span class="title">now_block</span> = <span class="title">ceil</span>($<span class="title">now_page</span> / $<span class="title">show_block_count</span>);</span></span><br><span class="line"><span class="class">    //<span class="title">echo</span> &quot;<span class="title">now_block</span> : &quot;.$<span class="title">now_block</span>.&quot;&lt;<span class="title">br</span>&gt;&quot;;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">    // 전체 페이지 구하기</span></span><br><span class="line"><span class="class">    // 전체 글 수 / 보여질 최대 글 수</span></span><br><span class="line"><span class="class">    $<span class="title">total_page</span> = <span class="title">ceil</span>($<span class="title">total_record</span> / $<span class="title">show_post_count</span>);</span></span><br><span class="line"><span class="class">    //<span class="title">echo</span> &quot;<span class="title">total_page</span> : &quot;.$<span class="title">total_page</span>.&quot;&lt;<span class="title">br</span>&gt;&quot;;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">    // 한 세트에 블럭이 4개인 세트가 몇 개인지(1,2,3,4가 한 세트, 5,6,7,8이 한 세트)</span></span><br><span class="line"><span class="class">    // 전체 페이지 / 4</span></span><br><span class="line"><span class="class">    $<span class="title">total_block_set</span> = <span class="title">ceil</span>($<span class="title">total_page</span> / $<span class="title">show_block_count</span>);</span></span><br><span class="line"><span class="class">    //<span class="title">echo</span> &quot;<span class="title">total_block_set</span> : &quot;.$<span class="title">total_block_set</span>.&quot;&lt;<span class="title">br</span>&gt;&quot;;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">    // 현재 블럭 세트가 2 이상이면</span></span><br><span class="line"><span class="class">    <span class="title">if</span>(1 &lt; $<span class="title">now_block</span>)</span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line">        <span class="comment">// (현재 블럭 - 1) x 한 블럭에 보여질 최대 블럭 수 </span></span><br><span class="line">        <span class="comment">//echo &quot;now_block : &quot;.($now_block - 1).&quot;&lt;br&gt;&quot;;</span></span><br><span class="line"></span><br><span class="line">        <span class="variable">$pre_page</span> = (<span class="variable">$now_block</span> - <span class="number">1</span>) * <span class="variable">$show_block_count</span>-<span class="number">1</span>;</span><br><span class="line">        <span class="comment">//echo &quot;pre_page : &quot;.$pre_page.&quot;&lt;br&gt;&quot;;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&#x27;&lt;a href=&quot;http://&#x27;</span>.<span class="variable">$_SERVER</span>[<span class="string">&#x27;HTTP_HOST&#x27;</span>].<span class="string">&#x27;/list.php?block=&#x27;</span>.<span class="variable">$pre_page</span>.<span class="string">&#x27;&quot;&gt;이전&lt;/a&gt;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="variable">$start_page</span> = (<span class="variable">$now_block</span> - <span class="number">1</span>) * <span class="variable">$show_block_count</span> + <span class="number">1</span>;</span><br><span class="line">    <span class="variable">$end_page</span> = <span class="variable">$now_block</span> * <span class="variable">$show_block_count</span>;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable">$end_page</span> &gt; <span class="variable">$total_page</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="variable">$end_page</span> = <span class="variable">$total_page</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span> <span class="keyword">for</span>(<span class="variable">$i</span> = <span class="variable">$start_page</span>; <span class="variable">$i</span>&lt;=<span class="variable">$end_page</span>; <span class="variable">$i</span>++):<span class="meta">?&gt;</span></span><br><span class="line">    &lt;li <span class="class"><span class="keyword">class</span>=<span class="title">ListLiStyle</span>&gt;&lt;<span class="title">a</span> <span class="title">href</span>=&quot;./<span class="title">list</span>.<span class="title">php</span>?<span class="title">page</span>=&lt;?=$<span class="title">i</span>;?&gt;&quot;&gt;&lt;?=$<span class="title">i</span>;?&gt;&lt;/<span class="title">a</span>&gt;&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="class">&lt;?<span class="title">php</span> <span class="title">endfor</span> ?&gt;</span></span><br><span class="line"><span class="class">    &lt;/<span class="title">ul</span>&gt;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">&lt;?<span class="title">php</span></span></span><br><span class="line"><span class="class">    // 현재 블럭이 전체 블럭보다 작으면</span></span><br><span class="line"><span class="class">    <span class="title">if</span>($<span class="title">now_block</span> &lt; $<span class="title">total_block_set</span>)</span></span><br><span class="line"><span class="class">    </span>&#123;</span><br><span class="line">        <span class="variable">$post_page</span> = <span class="variable">$now_block</span> * <span class="variable">$show_block_count</span> + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&#x27;&lt;a href=&quot;http://&#x27;</span>.<span class="variable">$_SERVER</span>[<span class="string">&#x27;HTTP_HOST&#x27;</span>].<span class="string">&#x27;/list.php?page=&#x27;</span>.<span class="variable">$post_page</span>.<span class="string">&#x27;&quot;&gt;다음&lt;/a&gt;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line">&lt;/div&gt;</span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="keyword">include_once</span>(<span class="variable">$_SERVER</span>[<span class="string">&#x27;DOCUMENT_ROOT&#x27;</span>].<span class="string">&#x27;/footer.php&#x27;</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Slay</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://example.com/2022/08/29/2022-08-29-web-dev-list-php/">http://example.com/2022/08/29/2022-08-29-web-dev-list-php/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2021 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2022/08/29/2022-08-29-web-dev-logout-php/">[apache+php+mariaDB Web dev] logout.php</a>
+            
+            
+            <a class="next" rel="next" href="/2022/08/27/2022-08-21-jump2python-exercises-answer-4-6/">[jump2python answer] 4-6</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Slay | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

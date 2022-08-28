@@ -15,7 +15,7 @@
 
 
 
-<title>[apache+php+mariaDB Web dev] main.css | Slay(Sean)</title>
+<title>[apache+php+mariaDB Web dev] delete_done.php | Slay(Sean)</title>
 
 
 
@@ -195,7 +195,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">[apache+php+mariaDB Web dev] main.css</h1>
+            <h1 class="post-title">[apache+php+mariaDB Web dev] delete_done.php</h1>
             
                 <div class="post-meta">
                     
@@ -204,7 +204,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">August 27, 2022&nbsp;&nbsp;4:10:04</a>
+                        Date: <a href="#">August 29, 2022&nbsp;&nbsp;1:15:35</a>
                         </span>
                     
                     
@@ -220,7 +220,10 @@
         </header>
 
         <div class="post-content">
-            <h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@charset</span> <span class="string">&quot;utf-8&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.header</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">4px</span> soild <span class="number">#c1c1c1</span>;</span><br><span class="line">    <span class="attribute">margin-bottom</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">4px</span> soild <span class="number">#0FF</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.footer</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">4px</span> soild <span class="number">#c1c1c1</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span><span class="selector-class">.btn</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">    <span class="attribute">display</span>:block;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">80px</span>;</span><br><span class="line">    <span class="attribute">line-height</span>:<span class="number">30px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>:center;</span><br><span class="line">    <span class="attribute">background-color</span>:<span class="number">#222</span>;</span><br><span class="line">    <span class="attribute">color</span>:<span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+            <h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="keyword">require_once</span>(<span class="variable">$_SERVER</span>[<span class="string">&#x27;DOCUMENT_ROOT&#x27;</span>].<span class="string">&#x27;/top.php&#x27;</span>);</span><br><span class="line">    <span class="keyword">include_once</span>(<span class="variable">$_SERVER</span>[<span class="string">&#x27;DOCUMENT_ROOT&#x27;</span>].<span class="string">&#x27;/header.php&#x27;</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="variable">$delete_status</span> = <span class="variable">$_SESSION</span>[<span class="string">&#x27;delete_status&#x27;</span>];</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable">$delete_status</span> == <span class="string">&#x27;y&#x27;</span>)</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;글이 삭제되었습니다.&quot;</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&quot;글을 삭제하지 못했습니다.&quot;</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">        <span class="keyword">include_once</span>(<span class="variable">$_SERVER</span>[<span class="string">&#x27;DOCUMENT_ROOT&#x27;</span>].<span class="string">&quot;/footer.php&quot;</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+
         </div>
 
         
@@ -234,7 +237,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2022/08/27/2022-08-27-web-dev-main-css/">http://example.com/2022/08/27/2022-08-27-web-dev-main-css/</a></span>
+                        <span><a href="http://example.com/2022/08/29/2022-08-29-web-dev-delete-done-php/">http://example.com/2022/08/29/2022-08-29-web-dev-delete-done-php/</a></span>
                     </p>
                 
                 
@@ -267,10 +270,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2022/08/27/2022-08-27-web-dev-index-php/">[apache+php+mariaDB Web dev] index.php</a>
+                <a class="prev" rel="prev" href="/2022/08/29/2022-08-29-web-dev-view-php/">[apache+php+mariaDB Web dev] view.php</a>
             
             
-            <a class="next" rel="next" href="/2022/08/27/2022-08-27-web-dev-footer-php/">[apache+php+mariaDB Web dev] footer.php</a>
+            <a class="next" rel="next" href="/2022/08/29/2022-08-29-web-dev-delete-php/">[apache+php+mariaDB Web dev] delete.php</a>
             
         </section>
 
