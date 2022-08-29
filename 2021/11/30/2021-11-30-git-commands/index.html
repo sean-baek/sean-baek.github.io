@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Slay">
+
+
+
+    <meta name="description" content="stone+i">
+
+
+
+<title>[Note] git Commands | Slay(Sean)</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Slay&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" target="_blank" rel="noopener" href="https://sean.tistory.com">Tistory</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Slay&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" target="_blank" rel="noopener" href="https://sean.tistory.com">Tistory</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">[Note] git Commands</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Slay</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">November 30, 2021&nbsp;&nbsp;0:00:10</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Note/">Note</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="Git-Command"><a href="#Git-Command" class="headerlink" title="Git Command"></a>Git Command</h1><h2 id="common-git-command"><a href="#common-git-command" class="headerlink" title="common git command"></a>common git command</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">-&gt; 로컬 저장소에서 원격 저장소로 업로드</span><br><span class="line"></span><br><span class="line"><span class="comment"># 혹시 모르니 원격 레포지토리와 로컬 저장소 동기화</span></span><br><span class="line">1. git pull</span><br><span class="line"></span><br><span class="line"><span class="comment"># 레포지토리에 업로드할 파일 추가</span></span><br><span class="line">2. git add &lt;파일명&gt; </span><br><span class="line">   tip) git add . <span class="comment"># 현재 디렉토리의 모든 파일 추가</span></span><br><span class="line"><span class="comment"># 현재 추적된 파일 상태 확인</span></span><br><span class="line">3. git status </span><br><span class="line"></span><br><span class="line"><span class="comment"># 이번 업로드 작업 커밋(설명)</span></span><br><span class="line">3. git commit -m <span class="string">&quot;커밋 내용&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 로컬 저장소에 있는 파일 원격 저장소에 업로드</span></span><br><span class="line">4. git push</span><br><span class="line"></span><br><span class="line">====================</span><br><span class="line"></span><br><span class="line">-&gt; 병합 할 때</span><br><span class="line"></span><br><span class="line"><span class="comment"># branch 정보 업데이트</span></span><br><span class="line">1. git fetch</span><br><span class="line"></span><br><span class="line"><span class="comment"># master branch로 이동</span></span><br><span class="line">2. git checkout master</span><br><span class="line"></span><br><span class="line"><span class="comment"># master branch에 다른 branch 내용 병합</span></span><br><span class="line">3. git merge &lt;master branch에 병합할 branch 이름&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># master 브런치에 올라갈 파일들 commit</span></span><br><span class="line">4. git commit -m <span class="string">&quot;커밋 내용&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 병합 적용</span></span><br><span class="line">5. git push origin master</span><br><span class="line"></span><br><span class="line">====================</span><br><span class="line"></span><br><span class="line">-&gt; 브런치 이동</span><br><span class="line">git checkout &lt;이동할 브런치 명&gt;</span><br><span class="line">ex) git checkout localbranch</span><br><span class="line"></span><br><span class="line">-&gt; 로컬에 브런치가 없는 상태에서 원격 저장소에 있는 특정 브런치를 가지고 올 때</span><br><span class="line">git checkout -t &lt;원격저장소로부터 가져올 브런치명&gt;</span><br><span class="line">ex) git checkout -t origin/testbranch</span><br><span class="line"></span><br><span class="line">-&gt; 브런치 생성 및 이동</span><br><span class="line">git checkout -b &lt;생성 및 이동할 브런치명&gt;</span><br><span class="line">ex) git checkout -b localbranch</span><br><span class="line"></span><br><span class="line">-&gt; 로컬, 원격 브런치 모두 보기</span><br><span class="line">git branch -a</span><br><span class="line"></span><br><span class="line">-&gt; 로컬 브런치만 보기</span><br><span class="line">git branch -l</span><br><span class="line"></span><br><span class="line">-&gt; 원격 브런치만 보기</span><br><span class="line">git branch -r</span><br><span class="line"></span><br><span class="line">-&gt; 브런치 삭제</span><br><span class="line">git branch -d &lt;삭제할 브런치명&gt;</span><br><span class="line"></span><br><span class="line">====================</span><br><span class="line"></span><br><span class="line">-&gt; 로컬 및 원격 저장소 둘 다에서 특정 파일을 지우고 싶을 때</span><br><span class="line">git rm &lt;file 이름&gt;</span><br><span class="line">git commit -m <span class="string">&quot;커밋 내용&quot;</span></span><br><span class="line">git push origin &lt;브런치명&gt;</span><br><span class="line"></span><br><span class="line">-&gt; 로컬 및 원격 저장소 둘 다에서 특정 디렉토리를 지우고 싶을 때</span><br><span class="line">git rm -r &lt;directory 이름&gt;</span><br><span class="line">git commit -m <span class="string">&quot;커밋 내용&quot;</span></span><br><span class="line">git push origin &lt;브런치명&gt;</span><br><span class="line"></span><br><span class="line">-&gt; 로컬에 있는 파일은 그대로 두고, 원격 저장소에 있는 파일만 지우고 싶을 때</span><br><span class="line">git rm --cached &lt;파일명&gt;</span><br><span class="line">git commit -m <span class="string">&quot;커밋 내용&quot;</span></span><br><span class="line">git push origin &lt;브런치명&gt;</span><br><span class="line"></span><br><span class="line">-&gt; 로컬에 있는 디렉토리는 그대로 두고, 원격 저장소에 있는 파일만 지우고 싶을 때</span><br><span class="line">git rm --cached -r &lt;디렉토리명&gt;</span><br><span class="line">git commit -m <span class="string">&quot;커밋 내용&quot;</span></span><br><span class="line">git push origin &lt;브런치명&gt;</span><br><span class="line"></span><br><span class="line">====================</span><br><span class="line"></span><br><span class="line">-&gt; git 패스워드 캐싱</span><br><span class="line">git config credential.helper store</span><br></pre></td></tr></table></figure>
+
+<h2 id="branch"><a href="#branch" class="headerlink" title="branch"></a>branch</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># branch확인</span></span><br><span class="line"><span class="comment"># 현재 존재하는 브런치와 활성화 되어 있는 브런치(녹색)</span></span><br><span class="line"><span class="comment"># 원격 저장소에만 저장된 브런치(빨간색)</span></span><br><span class="line">1. git branch</span><br><span class="line">1-1.git branch -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># branch에 대해 변경된 사항 및 정보를 업데이트</span></span><br><span class="line">git fetch</span><br><span class="line"></span><br><span class="line"><span class="comment"># 브런치 이동</span></span><br><span class="line">git checkout &lt;브런치명&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 브런치 생성 및 이동</span></span><br><span class="line">git checkout -b &lt;브런치명&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 지정된 브런치로 업로드</span></span><br><span class="line">git push origin &lt;브런치명&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-&gt; 다른 브런치로부터 파일 가져오기</span><br><span class="line"></span><br><span class="line"><span class="comment"># 가져온 파일이 저장될 브런치로 이동</span></span><br><span class="line">git checkout &lt;파일이 저장될 브런치명&gt;</span><br><span class="line">ex) git checkout A </span><br><span class="line"></span><br><span class="line"><span class="comment"># B 브런치에서 test.txt 파일 가져오기 </span></span><br><span class="line"><span class="comment"># B 브런치에서 test.txt를 가져온다.</span></span><br><span class="line">git checkout B test.txt</span><br><span class="line"><span class="comment">#추가</span></span><br><span class="line">git add test.txt</span><br><span class="line"><span class="comment"># 커밋</span></span><br><span class="line">git commit -m <span class="string">&quot;Update test.txt from B&quot;</span></span><br><span class="line"><span class="comment">#push</span></span><br><span class="line">git push origin &lt;파일이 업로드 될 브런치명&gt;</span><br><span class="line">ex)git push origin A</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-&gt; branch merge</span><br><span class="line"></span><br><span class="line"><span class="comment"># 브런치 병합 확인</span></span><br><span class="line">git branch --merged</span><br><span class="line"></span><br><span class="line"><span class="comment"># master 브런치에 다른 브런치의 내용을 병합할 때</span></span><br><span class="line">1. git checkout master</span><br><span class="line">2. git merge &lt;master 브런치에 병합할 다른 브런치의 이름&gt;</span><br><span class="line">3. git commit -m <span class="string">&quot;커밋할 내용&quot;</span></span><br><span class="line">4. git push origin master</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-&gt; branch 삭제 (Local Repository)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 지우려는 branch가 활성화 상태라면, master로 이동 후 삭제</span></span><br><span class="line"><span class="comment"># 병합하지 않았거나, 충돌 등의 오류로 삭제할 수 없을 때, -d 대신 -D를 사용하면 강제로 삭제</span></span><br><span class="line">1. git checkout master</span><br><span class="line">2. git branch -d &lt;삭제할 브런치명&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-&gt; branch 삭제 (remote repository)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 로컬 저장소에서 삭제하더라도, 깃허브에 저장된 브런치는 삭제되지 않는다.</span></span><br><span class="line">git push &lt;리모트명&gt; --delete &lt;삭제할 브런치명&gt;</span><br><span class="line">ex) git push origin --delete &lt;삭제할 브런치명&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="go-to-previous-commit"><a href="#go-to-previous-commit" class="headerlink" title="go to previous commit"></a>go to previous commit</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">-&gt; reset VS revert</span><br><span class="line"></span><br><span class="line">revert &gt; reset</span><br><span class="line"></span><br><span class="line">지정된 커밋 이후의 모든 커밋을 다 삭제하는 reset과 지정된 커밋이 왜 삭제 되었는지 커밋을 남기는 revert.</span><br><span class="line"></span><br><span class="line">revert는 지정된 커밋만 삭제하고, 해당 커밋이 왜 revert 된 건지 commit message를 통해 관찰할 수 있기 때문에 더 유용하다</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-&gt; reset</span><br><span class="line"></span><br><span class="line"><span class="comment"># 다른 사람과의 코드 공유가 없을 때</span></span><br><span class="line"><span class="comment"># origin에 올리지 않고 로컬에 커밋이 머물렀다거나 올라갔어도 나만 해당 브런치를 사용할 때</span></span><br><span class="line">Usage : git reset --option &lt;돌아갈 커밋 순번 or 커밋 해시&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 바로 이전 commit으로 돌아가기</span></span><br><span class="line">git reset HEAD^</span><br><span class="line"></span><br><span class="line"><span class="comment"># 여러 개의 commit 이전으로 돌리는 경우</span></span><br><span class="line"><span class="comment"># 현재 커밋부터 첫 번째로 하여 3번째에 해당하는 커밋으로 되돌아갈 때</span></span><br><span class="line">git reset HEAD~2</span><br><span class="line"></span><br><span class="line"><span class="comment"># --hard 옵션</span></span><br><span class="line"><span class="comment"># 지정된 n번 커밋으로 되돌아가는데, n번을 기준으로 이후 커밋들은 모두 삭제</span></span><br><span class="line">git reset --hard &lt;n번 commit <span class="built_in">hash</span>&gt;</span><br><span class="line">git push</span><br><span class="line"></span><br><span class="line"><span class="comment"># --soft 옵션</span></span><br><span class="line"><span class="comment"># 변경 이력은 모두 삭제되지만, stage 상태로 변경된 코드 내용이 남아있기 때문에</span></span><br><span class="line"><span class="comment"># add 명령어 필요없이 바로 commit 진행이 가능하다</span></span><br><span class="line">git reset --soft &lt;n번 commit <span class="built_in">hash</span>&gt;</span><br><span class="line">git commit -m <span class="string">&quot;&lt;커밋할 내용&gt;&quot;</span></span><br><span class="line">git push</span><br><span class="line"></span><br><span class="line"><span class="comment"># --mixed 옵션</span></span><br><span class="line"><span class="comment"># 변경 이력은 모두 삭제되지만, unstage 상태로 변경된 코드 내용응 남아있다.</span></span><br><span class="line"><span class="comment"># 코드를 반영하려면 add 명령어로 stage에 반영하고 commit 해야 함</span></span><br><span class="line">git reset --mixed &lt;n번 commit <span class="built_in">hash</span>&gt;</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;&lt;커밋할 내용&gt;&quot;</span></span><br><span class="line">git push</span><br><span class="line"></span><br><span class="line"><span class="comment"># --force</span></span><br><span class="line"><span class="comment"># 로컬은 origin에 있는 commit을 삭제한 채로 origin에 덮으려고 하기에 에러가 뜨므로</span></span><br><span class="line"><span class="comment"># --force 옵션을 주어 강제로 로컬 commit history를 origin commit history로 덮어쓴다.</span></span><br><span class="line"><span class="comment"># 이는 다른 사람과 해당 레포지토리를 공유하여 작업한다면 하면 안된다.</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-&gt; revert</span><br><span class="line"></span><br><span class="line"><span class="comment"># 다른 사람과의 코드 공유가 있을 때</span></span><br><span class="line"><span class="comment"># 커밋을 삭제하는 reset과는 다르게 커밋을 추가한다.</span></span><br><span class="line"><span class="comment"># 이전 커밋과 정반대의 데이터를 추가하는 방식으로 코드를 되돌린다.</span></span><br><span class="line"><span class="comment"># reset --soft, mixed와 동일한 결과를 가져오지만 이력은 Revert &quot;...&quot;라는 메시지가 추가된다.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 아래의 명령을 사용하면 n번 커밋 이후의 커밋들이 삭제되지 않고, n번 커밋에 해당하는 내용만 삭제되고</span></span><br><span class="line"><span class="comment"># revert &quot;n번 커밋&quot;이라는 커밋에는 n번 커밋이 삭제된 이력이 남게 된다.</span></span><br><span class="line">git revert &lt;n번 commit <span class="built_in">hash</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># --no-commit 옵션</span></span><br><span class="line"><span class="comment"># revert한 결과를 stage 상태만 유지하고, commit 하고 싶지 않을 때</span></span><br><span class="line">1. git revert --no-commit &lt;n번 커밋 해시&gt;</span><br><span class="line">2. git commit -m <span class="string">&quot;&lt;commit을 revert한 이유&gt;&quot;</span></span><br><span class="line">3. git push</span><br><span class="line"></span><br><span class="line"><span class="comment"># 여러 개의 커밋을 되돌릴 때</span></span><br><span class="line">git revert [n번 커밋 해시]..[n번 커밋 해시]</span><br><span class="line">ex) git revert [1번 커밋 해시]..[2번 커밋 해시]</span><br></pre></td></tr></table></figure>
+
+<h2 id="원격-저장소에-레포지토리-생성해놓고-로컬-저장소에서-디렉토리를-만들어-연결"><a href="#원격-저장소에-레포지토리-생성해놓고-로컬-저장소에서-디렉토리를-만들어-연결" class="headerlink" title="원격 저장소에 레포지토리 생성해놓고, 로컬 저장소에서 디렉토리를 만들어 연결"></a>원격 저장소에 레포지토리 생성해놓고, 로컬 저장소에서 디렉토리를 만들어 연결</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. <span class="built_in">cd</span> &lt;원격 저장소랑 연결할 디렉토리 이름&gt;</span><br><span class="line">2. git init</span><br><span class="line">3. git add &lt;업로드할 파일명&gt;</span><br><span class="line">4. git commit -m <span class="string">&quot;&lt;커밋 내용&gt;&quot;</span></span><br><span class="line">5. git branch -M &lt;브런치 이름(주로 main 또는 master로 입력)&gt;</span><br><span class="line">6. git remote add origin &lt;원격 저장소에 생성한 레포지토리 경로.git&gt;</span><br><span class="line">7. git push -u origin &lt;5번에서 입력했던 브런치 명&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="이미-로컬-저장소에-디렉토리가-있고-연결"><a href="#이미-로컬-저장소에-디렉토리가-있고-연결" class="headerlink" title="이미 로컬 저장소에 디렉토리가 있고, 연결"></a>이미 로컬 저장소에 디렉토리가 있고, 연결</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. git remote add origin &lt;원격 저장소에 생성한 레포지토리 경로.git&gt;</span><br><span class="line">2. git branch -M &lt;브런치 이름&gt;</span><br><span class="line">3. git push -u origin &lt;브런치 이름&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Git-사용자명-이메일-변경"><a href="#Git-사용자명-이메일-변경" class="headerlink" title="Git 사용자명, 이메일 변경"></a>Git 사용자명, 이메일 변경</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git commit --global user.name <span class="string">&quot;&lt;github 사용자 이름&gt;&quot;</span></span><br><span class="line">ex) git commit --global user.name <span class="string">&quot;sean-baek&quot;</span></span><br><span class="line">git commit --global user.email <span class="string">&quot;&lt;사용자 email&gt;&quot;</span></span><br><span class="line">ex) ex) git commit --global user.email <span class="string">&quot;tester@gamil.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="다른-사람의-private-repo-git-clone-안될-시"><a href="#다른-사람의-private-repo-git-clone-안될-시" class="headerlink" title="다른 사람의 private repo git clone 안될 시"></a>다른 사람의 private repo git clone 안될 시</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://[본인 github 사용자 이름]@[https를 제외한 repo 주소].git</span><br><span class="line">ex) git <span class="built_in">clone</span> https://[sean-baek]@github.com/Username/test.git</span><br></pre></td></tr></table></figure>
+
+<hr>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Slay</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://example.com/2021/11/30/2021-11-30-git-commands/">http://example.com/2021/11/30/2021-11-30-git-commands/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2021 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2021/11/30/2021-11-30-tcpdump-commands/">[Note] tcpdump Commands</a>
+            
+            
+            <a class="next" rel="next" href="/2021/11/30/2021-11-30-docker-commands/">[Note] docker Commands</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Slay | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
