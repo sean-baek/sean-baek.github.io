@@ -15,7 +15,7 @@
 
 
 
-<title>[C]bubble_sort_ascending | Slay(Sean)</title>
+<title>[Note] gcc options | Slay(Sean)</title>
 
 
 
@@ -195,7 +195,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">[C]bubble_sort_ascending</h1>
+            <h1 class="post-title">[Note] gcc options</h1>
             
                 <div class="post-meta">
                     
@@ -204,14 +204,14 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">August 21, 2022&nbsp;&nbsp;16:51:00</a>
+                        Date: <a href="#">September 20, 2022&nbsp;&nbsp;11:40:00</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/C-Algorithm/">C Algorithm</a>
+                                <a href="/categories/Note/">Note</a>
                             
                         </span>
                     
@@ -220,7 +220,13 @@
         </header>
 
         <div class="post-content">
-            <h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bubble_sort_ascending</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> count)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>, j;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(; i&lt;count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;count<span class="number">-1</span>; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[j] &gt; arr[j + <span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                temp = arr[j];</span><br><span class="line">                arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">                arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>, size=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> numArr[<span class="number">10</span>] = &#123;<span class="number">8</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">10</span>,<span class="number">1</span>,<span class="number">6</span>,<span class="number">9</span>&#125;;</span><br><span class="line"></span><br><span class="line">    size = <span class="keyword">sizeof</span>(numArr) / <span class="keyword">sizeof</span>(<span class="keyword">int</span>);</span><br><span class="line">    bubble_sort_ascending(numArr, size);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(; i &lt; size; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, numArr[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h1 id="C언어-표준-버전-지정-옵션"><a href="#C언어-표준-버전-지정-옵션" class="headerlink" title="C언어 표준 버전 지정 옵션"></a>C언어 표준 버전 지정 옵션</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># C언어 표준 버전 지정 옵션</span></span><br><span class="line">-std=c11</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="C언어-표준에-따라-문법을-검사"><a href="#C언어-표준에-따라-문법을-검사" class="headerlink" title="C언어 표준에 따라 문법을 검사"></a>C언어 표준에 따라 문법을 검사</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># C언어 표준에 따라 문법을 검사</span></span><br><span class="line">-pedantic</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="경고-수준을-최대로-올려-모든-경고를-출력하는-옵션"><a href="#경고-수준을-최대로-올려-모든-경고를-출력하는-옵션" class="headerlink" title="경고 수준을 최대로 올려 모든 경고를 출력하는 옵션"></a>경고 수준을 최대로 올려 모든 경고를 출력하는 옵션</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 경고 수준을 최대로 올려 모든 경고를 출력하는 옵션</span></span><br><span class="line">-Wall</span><br></pre></td></tr></table></figure>
 
 <hr>
 
@@ -237,7 +243,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2022/08/21/2022-08-21-bubble-sort-ascending/">http://example.com/2022/08/21/2022-08-21-bubble-sort-ascending/</a></span>
+                        <span><a href="http://example.com/2022/09/20/2022-09-20-gcc-options/">http://example.com/2022/09/20/2022-09-20-gcc-options/</a></span>
                     </p>
                 
                 
@@ -270,10 +276,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2022/08/21/2022-08-21-bubble-sort-descending/">[C]bubble_sort_descending</a>
+                <a class="prev" rel="prev" href="/2022/09/20/2022-09-20-python-audio-english-text/">[python toy tool] audio_english_text()</a>
             
             
-            <a class="next" rel="next" href="/2022/08/15/2022-08-15-Useful-Linux-commands/">[Note] useful Linux commands</a>
+            <a class="next" rel="next" href="/2022/09/14/2022-09-14-get-n-print-file-content-function/">[C] get_n_print_file_content()</a>
             
         </section>
 

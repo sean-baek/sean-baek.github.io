@@ -15,7 +15,7 @@
 
 
 
-<title>[C]bubble_sort_ascending | Slay(Sean)</title>
+<title>[python toy tool] merge_multiple_pdf() | Slay(Sean)</title>
 
 
 
@@ -195,7 +195,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">[C]bubble_sort_ascending</h1>
+            <h1 class="post-title">[python toy tool] merge_multiple_pdf()</h1>
             
                 <div class="post-meta">
                     
@@ -204,14 +204,14 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">August 21, 2022&nbsp;&nbsp;16:51:00</a>
+                        Date: <a href="#">September 20, 2022&nbsp;&nbsp;12:01:00</a>
                         </span>
                     
                     
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/C-Algorithm/">C Algorithm</a>
+                                <a href="/categories/python-toy-tool/">python toy tool</a>
                             
                         </span>
                     
@@ -220,7 +220,7 @@
         </header>
 
         <div class="post-content">
-            <h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bubble_sort_ascending</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> count)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>, j;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(; i&lt;count; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;count<span class="number">-1</span>; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[j] &gt; arr[j + <span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                temp = arr[j];</span><br><span class="line">                arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">                arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>, size=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> numArr[<span class="number">10</span>] = &#123;<span class="number">8</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">10</span>,<span class="number">1</span>,<span class="number">6</span>,<span class="number">9</span>&#125;;</span><br><span class="line"></span><br><span class="line">    size = <span class="keyword">sizeof</span>(numArr) / <span class="keyword">sizeof</span>(<span class="keyword">int</span>);</span><br><span class="line">    bubble_sort_ascending(numArr, size);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(; i &lt; size; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, numArr[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PyPDF2 <span class="keyword">import</span> PdfFileMerger, PdfFileReader</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment"># os.getcwd() : 다른 폴더에서 추출하기 위한 용도</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pdf_merger</span>(<span class="params">file</span>):</span></span><br><span class="line">    merger = PdfFileMerger()</span><br><span class="line">    <span class="keyword">for</span> items <span class="keyword">in</span> os.listdir():</span><br><span class="line">        <span class="keyword">if</span> items.endswith(<span class="string">&#x27;.pdf&#x27;</span>):</span><br><span class="line">            merger.append(items)</span><br><span class="line">    merger.write(<span class="string">&quot;Final_pdf.pdf&quot;</span>)</span><br><span class="line">    merger = PdfFileMerger()</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(file, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        merger.append(PdfFileReader(f))</span><br><span class="line">    merger.close()</span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    file = <span class="built_in">input</span>(<span class="string">&quot;현재 폴더에 있는 pdf 파일들을 합칠 원본 pdf 파일을 입력하세요 : &quot;</span>)</span><br><span class="line">    pdf_merger(file)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <hr>
 
@@ -237,7 +237,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2022/08/21/2022-08-21-bubble-sort-ascending/">http://example.com/2022/08/21/2022-08-21-bubble-sort-ascending/</a></span>
+                        <span><a href="http://example.com/2022/09/20/2022-09-20-python-merge-multiple-pdf/">http://example.com/2022/09/20/2022-09-20-python-merge-multiple-pdf/</a></span>
                     </p>
                 
                 
@@ -270,10 +270,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2022/08/21/2022-08-21-bubble-sort-descending/">[C]bubble_sort_descending</a>
+                <a class="prev" rel="prev" href="/2022/09/20/2022-09-20-python-set-password-pdf/">[python toy tool] set_password_pdf()</a>
             
             
-            <a class="next" rel="next" href="/2022/08/15/2022-08-15-Useful-Linux-commands/">[Note] useful Linux commands</a>
+            <a class="next" rel="next" href="/2022/09/20/2022-09-20-python-extract-mp3-from-mp4/">[python toy tool] extract_mp3_from_mp4()</a>
             
         </section>
 
