@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Slay">
+
+
+
+    <meta name="description" content="stone+i">
+
+
+
+<title>[Note] Commands useful when study system hacking | Slay(Sean)</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Slay&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" target="_blank" rel="noopener" href="https://sean.tistory.com">Tistory</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Slay&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" target="_blank" rel="noopener" href="https://sean.tistory.com">Tistory</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">[Note] Commands useful when study system hacking</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Slay</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">January 20, 2023&nbsp;&nbsp;1:00:00</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Note/">Note</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="objdump"><a href="#objdump" class="headerlink" title="objdump"></a>objdump</h1><ul>
+<li>라이브러리, 컴파일된 오브젝트 모듈, 공유 오브젝트 파일, 독립 실행파일등의 바이너리 파일들의 정보를 보여주는 프로그램.</li>
+<li>ELF 파일을 어셈블리어로 보여주는 역어셈블러로 사용될 수 있다.</li>
+</ul>
+<h2 id="objdump-usage"><a href="#objdump-usage" class="headerlink" title="objdump usage"></a>objdump usage</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">-a, --archive-headers    Display archive header information</span><br><span class="line">-f, --file-headers       Display the contents of the overall file header</span><br><span class="line">-p, --private-headers    Display object format specific file header contents</span><br><span class="line">-P, --private=OPT,OPT... Display object format specific contents</span><br><span class="line">-h, --[section-]headers  Display the contents of the section headers</span><br><span class="line">-x, --all-headers        Display the contents of all headers</span><br><span class="line">-d, --disassemble        Display assembler contents of executable sections</span><br><span class="line">-D, --disassemble-all    Display assembler contents of all sections</span><br><span class="line">-S, --<span class="built_in">source</span>             Intermix <span class="built_in">source</span> code with disassembly</span><br><span class="line">-s, --full-contents      Display the full contents of all sections requested</span><br><span class="line">-g, --debugging          Display debug information <span class="keyword">in</span> object file</span><br><span class="line">-e, --debugging-tags     Display debug information using ctags style</span><br><span class="line">-G, --stabs              Display (<span class="keyword">in</span> raw form) any STABS info <span class="keyword">in</span> the file</span><br><span class="line">-W[lLiaprmfFsoRt] or</span><br><span class="line">--dwarf[=rawline,=decodedline,=info,=abbrev,=pubnames,=aranges,=macro,=frames,</span><br><span class="line">        =frames-interp,=str,=loc,=Ranges,=pubtypes,</span><br><span class="line">        =gdb_index,=trace_info,=trace_abbrev,=trace_aranges,</span><br><span class="line">        =addr,=cu_index]</span><br><span class="line">                        Display DWARF info <span class="keyword">in</span> the file</span><br><span class="line">-t, --syms               Display the contents of the symbol table(s)</span><br><span class="line">-T, --dynamic-syms       Display the contents of the dynamic symbol table</span><br><span class="line">-r, --reloc              Display the relocation entries <span class="keyword">in</span> the file</span><br><span class="line">-R, --dynamic-reloc      Display the dynamic relocation entries <span class="keyword">in</span> the file</span><br><span class="line">@&lt;file&gt;                  Read options from &lt;file&gt;</span><br><span class="line">-v, --version            Display this program<span class="string">&#x27;s version number</span></span><br><span class="line"><span class="string">-i, --info               List object formats and architectures supported</span></span><br><span class="line"><span class="string">-H, --help               Display this information</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="objdump-examples"><a href="#objdump-examples" class="headerlink" title="objdump examples"></a>objdump examples</h2><h3 id="바이너리에서-코드-가젯을-찾고자-할-때"><a href="#바이너리에서-코드-가젯을-찾고자-할-때" class="headerlink" title="바이너리에서 코드 가젯을 찾고자 할 때"></a>바이너리에서 코드 가젯을 찾고자 할 때</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">objdump -d [바이너리 파일] | grep <span class="string">&quot;[함수 이름]&quot;</span> -A10</span><br><span class="line">ex) objdump -d ./test_file | grep <span class="string">&quot;read&quot;</span> -A10</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="readelf"><a href="#readelf" class="headerlink" title="readelf"></a>readelf</h1><ul>
+<li>elf 파일의 정보를 보여준다.</li>
+</ul>
+<h2 id="readelf-usage"><a href="#readelf-usage" class="headerlink" title="readelf usage"></a>readelf usage</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">Display information about the contents of ELF format files</span><br><span class="line">Options are:</span><br><span class="line">-a --all               Equivalent to: -h -l -S -s -r -d -V -A -I</span><br><span class="line">-h --file-header       Display the ELF file header</span><br><span class="line">-l --program-headers   Display the program headers</span><br><span class="line">    --segments          An <span class="built_in">alias</span> <span class="keyword">for</span> --program-headers</span><br><span class="line">-S --section-headers   Display the sections header</span><br><span class="line">    --sections          An <span class="built_in">alias</span> <span class="keyword">for</span> --section-headers</span><br><span class="line">-g --section-groups    Display the section groups</span><br><span class="line">-t --section-details   Display the section details</span><br><span class="line">-e --headers           Equivalent to: -h -l -S</span><br><span class="line">-s --syms              Display the symbol table</span><br><span class="line">    --symbols           An <span class="built_in">alias</span> <span class="keyword">for</span> --syms</span><br><span class="line">--dyn-syms             Display the dynamic symbol table</span><br><span class="line">-n --notes             Display the core notes (<span class="keyword">if</span> present)</span><br><span class="line">-r --relocs            Display the relocations (<span class="keyword">if</span> present)</span><br><span class="line">-u --unwind            Display the unwind info (<span class="keyword">if</span> present)</span><br><span class="line">-d --dynamic           Display the dynamic section (<span class="keyword">if</span> present)</span><br><span class="line">-V --version-info      Display the version sections (<span class="keyword">if</span> present)</span><br><span class="line">-A --arch-specific     Display architecture specific information (<span class="keyword">if</span> any)</span><br><span class="line">-c --archive-index     Display the symbol/file index <span class="keyword">in</span> an archive</span><br><span class="line">-D --use-dynamic       Use the dynamic section info when displaying symbols</span><br><span class="line">-x --hex-dump=&lt;number|name&gt;</span><br><span class="line">                        Dump the contents of section &lt;number|name&gt; as bytes</span><br><span class="line">-p --string-dump=&lt;number|name&gt;</span><br><span class="line">                        Dump the contents of section &lt;number|name&gt; as strings</span><br><span class="line">-R --relocated-dump=&lt;number|name&gt;</span><br><span class="line">                        Dump the contents of section &lt;number|name&gt; as relocated bytes</span><br><span class="line">-z --decompress        Decompress section before dumping it</span><br><span class="line">-w[lLiaprmfFsoRt] or</span><br><span class="line">--debug-dump[=rawline,=decodedline,=info,=abbrev,=pubnames,=aranges,=macro,=frames,</span><br><span class="line">            =frames-interp,=str,=loc,=Ranges,=pubtypes,</span><br><span class="line">            =gdb_index,=trace_info,=trace_abbrev,=trace_aranges,</span><br><span class="line">            =addr,=cu_index]</span><br><span class="line">                        Display the contents of DWARF2 debug sections</span><br><span class="line">--dwarf-depth=N        Do not display DIEs at depth N or greater</span><br><span class="line">--dwarf-start=N        Display DIEs starting with N, at the same depth</span><br><span class="line">                        or deeper</span><br><span class="line">-I --histogram         Display histogram of bucket list lengths</span><br><span class="line">-W --wide              Allow output width to exceed 80 characters</span><br><span class="line">@&lt;file&gt;                Read options from &lt;file&gt;</span><br><span class="line">-H --<span class="built_in">help</span>              Display this information</span><br><span class="line">-v --version           Display the version number of readelf</span><br></pre></td></tr></table></figure>
+
+<h2 id="readelf-examples"><a href="#readelf-examples" class="headerlink" title="readelf examples"></a>readelf examples</h2><h3 id="특정-함수의-offset-값을-알고-싶을-때"><a href="#특정-함수의-offset-값을-알고-싶을-때" class="headerlink" title="특정 함수의 offset 값을 알고 싶을 때"></a>특정 함수의 offset 값을 알고 싶을 때</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">readelf -a [ELF 파일 이름] | grep <span class="string">&quot;[함수 이름]&quot;</span></span><br><span class="line">readelf -a /lib/x86_64-linux-gnu/libc.so.6 | grep <span class="string">&quot;write&quot;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="pwntools"><a href="#pwntools" class="headerlink" title="pwntools"></a>pwntools</h1><ul>
+<li>system 해킹을 하면서 exploit을 할 때 유용한 python 라이브러리이다.</li>
+<li><a target="_blank" rel="noopener" href="https://docs.pwntools.com/en/stable/">https://docs.pwntools.com/en/stable/</a></li>
+</ul>
+<h2 id="모듈-포함"><a href="#모듈-포함" class="headerlink" title="모듈 포함"></a>모듈 포함</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure>
+
+<h2 id="문제에-접속"><a href="#문제에-접속" class="headerlink" title="문제에 접속"></a>문제에 접속</h2><h3 id="process"><a href="#process" class="headerlink" title="process"></a>process</h3><ul>
+<li>로컬 프로세스를 이용해 통신하기 때문에 익스플로잇을 로컬 바이너리를 대상으로 할 때 사용한다.</li>
+<li>보통 익스플로잇을 테스트하고 디버깅을 하기 위해서 사용한다.</li>
+<li>환경 변수를 직접 설정할 수 있고, 인자를 전달해야 하는 경우 인자를 전달할 수 있다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">p = process(<span class="string">&#x27;[바이너리 파일 경로 및 이름]&#x27;</span>)</span><br><span class="line">ex) p = process(<span class="string">&#x27;./test_file&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="remote"><a href="#remote" class="headerlink" title="remote"></a>remote</h3><ul>
+<li>원격 서버를 대상으로 할 때 사용한다.</li>
+<li>대상 서버를 실제로 공격하기 위해 사용한다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">p = remote(<span class="string">&#x27;[host]&#x27;</span>, [port 번호])</span><br><span class="line">ex) p = remote(<span class="string">&#x27;testsite.com&#x27;</span>, <span class="number">12412</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="ssh"><a href="#ssh" class="headerlink" title="ssh"></a>ssh</h3><ul>
+<li>원격 서버에 ssh로 접속한다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">p = ssh(user=<span class="string">&#x27;[user 이름]&#x27;</span>, host=<span class="string">&#x27;[host]&#x27;</span>, port=<span class="string">&#x27;[port 번호]&#x27;</span>, password=<span class="string">&#x27;[패스워드]&#x27;</span>)</span><br><span class="line">ex) p = ssh(user=<span class="string">&#x27;slay&#x27;</span>, host=<span class="string">&#x27;testsite.com&#x27;</span>, port=<span class="number">22</span>, password=<span class="string">&#x27;1234&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="데이터-전송-및-수신"><a href="#데이터-전송-및-수신" class="headerlink" title="데이터 전송 및 수신"></a>데이터 전송 및 수신</h2><h2 id="send"><a href="#send" class="headerlink" title="send"></a>send</h2><ul>
+<li>데이터를 프로세스에 전송하기 위해 사용한다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">p = process(<span class="string">&#x27;./test&#x27;</span>)</span><br><span class="line"></span><br><span class="line">p.send(<span class="string">&#x27;a&#x27;</span>) <span class="comment"># ./test에 &#x27;a&#x27;를 입력한다.</span></span><br><span class="line">p.sendline(<span class="string">&#x27;A&#x27;</span>) <span class="comment"># ./test에 &#x27;A&#x27;+&#x27;\n&#x27;을 입력</span></span><br><span class="line">p.sendafter(<span class="string">&#x27;hello&#x27;</span>,<span class="string">&#x27;A&#x27;</span>) <span class="comment"># ./test가 &#x27;hello&#x27;를 출력하면, &#x27;A&#x27;를 입력</span></span><br><span class="line">p.sendlineafter(<span class="string">&#x27;hello&#x27;</span>,<span class="string">&#x27;A&#x27;</span>) <span class="comment"># ./test가 &#x27;hello&#x27;를 출력하면, &#x27;A&#x27; + &#x27;\n&#x27;을 입력</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="recv"><a href="#recv" class="headerlink" title="recv"></a>recv</h2><ul>
+<li>프로세스로부터 데이터를 받기 위해 사용한다.</li>
+<li>recv는 최대 n byte까지 받는다는 의미로, 최대치만큼 데이터를 받지 못해도 된다.</li>
+<li>recvn은 정확히 n byte의 데이터를 받는다는 의미로, n byte만큼 받지 못하면 계속 기다린다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">p = process(<span class="string">&#x27;./test&#x27;</span>)</span><br><span class="line"></span><br><span class="line">data = p.recv(<span class="number">1024</span>) <span class="comment"># p가 출력하는 데이터를 최대 1024바이트까지 받아서 data에 저장</span></span><br><span class="line">data = p.recvline() <span class="comment"># p가 출력하는 데이터를 개행문자를 만날 때까지 받아서 data에 저장</span></span><br><span class="line">data = p.recvn(<span class="number">5</span>) <span class="comment"># p가 출력하는 데이터를 5바이트만 받아서 data에 저장</span></span><br><span class="line">data = p.recvuntil(<span class="string">&#x27;hello&#x27;</span>) <span class="comment"># p가 출력하는 데이터를 &#x27;hello&#x27;가 출력될 때까지 받아서 data에 저장</span></span><br><span class="line">data = p.recvall() <span class="comment"># p가 출력하는 데이터를 프로세스가 종료될 받아서 data에 저장</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="패킹과-언패킹"><a href="#패킹과-언패킹" class="headerlink" title="패킹과 언패킹"></a>패킹과 언패킹</h2><ul>
+<li>패킹 : 어떠한 숫자로 된 정수 값을 리틀 엔디언 방식의 byte 배열인 문자열로 변경한다.</li>
+<li>언패킹 : 리틀 엔디언 방식의 byte 배열인 문자여을 어떠한 숫자로 된 정수 값으로 변경한다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment"># 16진수를 리틀엔디언으로 변환</span></span><br><span class="line">s32 = <span class="number">0x41424344</span></span><br><span class="line">s64 = <span class="number">0x4142434445464748</span></span><br><span class="line"><span class="comment"># p8, p16, p32, p64 : 4byte, 8byte 값을 정수값 -&gt; 바이트 배열 문자열로 바꾼다.</span></span><br><span class="line"><span class="comment"># ex) 0x41 -&gt; &#x27;a&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(p32(s32))</span><br><span class="line"><span class="built_in">print</span>(p64(s64))</span><br><span class="line"></span><br><span class="line"><span class="comment"># u8, u16, u32, u64 : 4byte, 8byte 값을 바이트 배열 문자열 -&gt; 정수값으로 바꾼다.</span></span><br><span class="line"><span class="comment"># ex) &#x27;a&#x27; -&gt; 0x41</span></span><br><span class="line">s32 = <span class="string">&quot;ABCD&quot;</span></span><br><span class="line">s64 = <span class="string">&quot;ABCDEFGH&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">hex</span>(u32(s32)))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">hex</span>(u64(s64)))</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">b<span class="string">&#x27;DCBA&#x27;</span></span><br><span class="line">b<span class="string">&#x27;HGFEDCBA&#x27;</span></span><br><span class="line">0x44434241</span><br><span class="line">0x4847464544434241</span><br></pre></td></tr></table></figure>
+
+<h2 id="interactive"><a href="#interactive" class="headerlink" title="interactive"></a>interactive</h2><ul>
+<li>셸을 획득했거나,익스플로잇의 특정 상황에 직접 입력을 주면서 출력을 확인하고 싶을 때 사용하는 함수이다.</li>
+<li>호출하고 나면 터미널로 프로세스에 데이터를 입력하고, 프로세스의 출력을 확인할 수 있다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">p = process(<span class="string">&#x27;./test&#x27;</span>)</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+
+<h2 id="ELF"><a href="#ELF" class="headerlink" title="ELF"></a>ELF</h2><ul>
+<li>ELF 헤더에는 익스플로잇에 사용될 수 있는 각종 정보들이 기록되어 있다.</li>
+<li>익스플로잇 코드를 작성할 때 함수 주소나 문자열 주소 등과 같은 정보들을 가져올 수 있다.</li>
+<li>ex) plt, got, ELF 파일에 있는 문자열의 주소, section의 주소 등</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">p = process(<span class="string">&#x27;./test&#x27;</span>)</span><br><span class="line">elf = ELF(<span class="string">&#x27;./test&#x27;</span>)</span><br><span class="line">libc = ELF(<span class="string">&#x27;./libc.so.6&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(p32(elf.plt[<span class="string">&#x27;read&#x27;</span>])) <span class="comment"># read 함수의 plt 주소를 출력</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(p32(elf.got[<span class="string">&#x27;read&#x27;</span>])) <span class="comment"># read 함수의 got 주소를 출력</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(libc.symbols[<span class="string">&#x27;read&#x27;</span>])) <span class="comment"># 메모리에 올려진 라이브러리 파일의 시작 주소로부터 떨어진 read() 함수의 offset 값을 출력</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">hex</span>(<span class="built_in">next</span>(elf.search(<span class="string">&quot;/bin/sh&quot;</span>)))) <span class="comment"># test 바이너리 파일 안에 있는 &quot;/bin/sh&quot; 문자열의 주소를 출력</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">hex</span>(elf.get_section_by_name(<span class="string">&#x27;.bss&#x27;</span>).header.sh_addr)) <span class="comment"># test 바이너리 파일에 존재하는 .bss 섹션의 주소를 출력</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> `elf.read(elf.symbols[<span class="string">&#x27;main&#x27;</span>], <span class="number">4</span>)` <span class="comment"># 원하는 바이너리 주소에서 데이터를 읽어온다.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 원하는 바이너리 주소에 데이터를 쓰고, 읽어온다.</span></span><br><span class="line">elf.write(<span class="number">0x400000</span>, <span class="string">&quot;!!!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span> `elf.read(<span class="number">0x400000</span>, <span class="number">4</span>)`</span><br></pre></td></tr></table></figure>
+
+<h2 id="context-log"><a href="#context-log" class="headerlink" title="context.log"></a>context.log</h2><ul>
+<li>익스플로잇에 버그가 발생하면 익스플로잇도 디버깅을 해야 하는데, pwntools에는 디버그의 편의를 돕는 로깅 기능이 있으며, 로그 레벨은 context.log_level 변수로 조절할 수 있다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">context.log_level = <span class="string">&#x27;error&#x27;</span> <span class="comment"># 에러만 출력</span></span><br><span class="line">context.log_level = <span class="string">&#x27;debug&#x27;</span> <span class="comment"># 대상 프로세스와 익스플로잇간에 오가는 모든 데이터를 화면에 출력</span></span><br><span class="line">context.log_level = <span class="string">&#x27;info&#x27;</span>  <span class="comment"># 비교적 중요한 정보들만 출력</span></span><br><span class="line"></span><br><span class="line">log.info()</span><br></pre></td></tr></table></figure>
+
+<h2 id="context-arch"><a href="#context-arch" class="headerlink" title="context.arch"></a>context.arch</h2><ul>
+<li>pwntools는 셸코드를 생성하거나, 코드를 어셈블, 디스어셈블하는 기능 등을 가지고 있는데, 이들은 공격 대상의 아키텍처에 영향을 받기 때문에 pwntools는 다키텍처 정보를 프로그래머가 지정할 수 있게 하며, 이 값에 따라 몇몇 함수들의 동작이 달라진다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">context.arch = <span class="string">&quot;amd64&quot;</span> <span class="comment"># x86-64 아키텍처</span></span><br><span class="line">context.arch = <span class="string">&quot;i386&quot;</span>  <span class="comment"># x86 아키텍처</span></span><br><span class="line">context.arch = <span class="string">&quot;arm&quot;</span>   <span class="comment"># arm 아키텍처</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="shellcraft"><a href="#shellcraft" class="headerlink" title="shellcraft"></a>shellcraft</h2><ul>
+<li>x86-64를 대상으로 생성할 수 있는 여러 종류의 셸 코드 : <a target="_blank" rel="noopener" href="https://docs.pwntools.com/en/stable/shellcraft/amd64.html">https://docs.pwntools.com/en/stable/shellcraft/amd64.html</a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pwntools에는 자주 사용되는 셸 코드들이 저장되어 있어 공격에 필요한 셸 코드를 쉽게 꺼내 쓸 수 있게 해주는데, 정적으로 생성된 셰이라 셸 코드가 실행될 때의 메모리 상태를 반영하지 못하고, 프로그램에 따라 입력할 수 있는 셸 코드의 길이나, 구성 가능한 문자의 종류에 제한이 있을 수 있는데 이런 조건들도 반영하기가 어렵기 때문에 직접 셸 코드를 작성하는 것이 좋다.</span><br></pre></td></tr></table></figure></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"><span class="comment">#Name: shellcraft.py</span></span><br><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line">context.arch = <span class="string">&#x27;amd64&#x27;</span> <span class="comment"># 대상 아키텍처 x86-64</span></span><br><span class="line">code = shellcraft.sh() <span class="comment"># 셸을 실행하는 셸 코드 </span></span><br><span class="line"><span class="built_in">print</span>(code)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/* execve(path=<span class="string">&#x27;/bin///sh&#x27;</span>, argv=[<span class="string">&#x27;sh&#x27;</span>], envp=0) */</span><br><span class="line">/* push b<span class="string">&#x27;/bin///sh\x00&#x27;</span> */</span><br><span class="line">push 0x68</span><br><span class="line">mov rax, 0x732f2f2f6e69622f</span><br><span class="line">...</span><br><span class="line">syscall</span><br></pre></td></tr></table></figure>
+
+<h2 id="asm"><a href="#asm" class="headerlink" title="asm"></a>asm</h2><ul>
+<li>pwntools는 어셈블 기능을 제공하는데, 이 기능도 대상 아키텍처가 중요하므로 미리 아키텍처를 지정해야 한다.<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"><span class="comment">#Name: asm.py</span></span><br><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line">context.arch = <span class="string">&#x27;amd64&#x27;</span> <span class="comment"># 익스플로잇 대상 아키텍처 &#x27;x86-64&#x27;</span></span><br><span class="line">code = shellcraft.sh() <span class="comment"># 셸을 실행하는 셸 코드</span></span><br><span class="line">code = asm(code)       <span class="comment"># 셸 코드를 기계어로 어셈블</span></span><br><span class="line"><span class="built_in">print</span>(code)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b<span class="string">&#x27;jhH\xb8/bin///sPH\x89\xe7hri\x01\x01\x814$\x01\x01\x01\x011\xf6Vj\x08^H\x01\xe6VH\x89\xe61\xd2j;X\x0f\x05&#x27;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Slay</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://example.com/2023/01/20/2023-01-20-commands-useful-when-study-system-hacking/">http://example.com/2023/01/20/2023-01-20-commands-useful-when-study-system-hacking/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2021 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2022/09/20/2022-09-20-python-sound-recorder/">[python toy tool] sound_recorder()</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Slay | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
