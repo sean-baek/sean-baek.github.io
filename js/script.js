@@ -44,17 +44,17 @@ document.ready(
         } else {
             document.getElementById("switch_default").checked = false;
             // mobile
-            document.getElementById("mobile-toggle-theme").innerText = "· Light" // before Light
+            document.getElementById("mobile-toggle-theme").innerText = "· Dark" // before Light
         }
         _Blog.toggleTheme = function () {
             if (isDark) {
                 pagebody.classList.add('dark-theme');
                 // mobile
-                document.getElementById("mobile-toggle-theme").innerText = "· Light" // before Dark
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark" // before Dark
             } else {
                 pagebody.classList.remove('dark-theme');
                 // mobile
-                document.getElementById("mobile-toggle-theme").innerText = "· Dark" // before Dark
+                document.getElementById("mobile-toggle-theme").innerText = "· Light" // before Dark
             }
             document.getElementsByClassName('toggleBtn')[0].addEventListener('click', () => {
                 if (pagebody.classList.contains('dark-theme')) {
