@@ -44,7 +44,7 @@ document.ready(
         } else {
             document.getElementById("switch_default").checked = false;
             // mobile
-            document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            document.getElementById("mobile-toggle-theme").innerText = "· Light"
         }
         _Blog.toggleTheme = function () {
             if (isDark) {
@@ -58,7 +58,7 @@ document.ready(
             }
             document.getElementsByClassName('toggleBtn')[0].addEventListener('click', () => {
                 if (pagebody.classList.contains('dark-theme')) {
-                    pagebody.classList.add('dark-theme');
+                    pagebody.classList.remove('dark-theme');
                 } else {
                     pagebody.classList.add('dark-theme');
                 }
