@@ -70,12 +70,12 @@ document.ready(
                 if (pagebody.classList.contains('dark-theme')) {
                     pagebody.classList.remove('dark-theme');
                     // mobile
-                    document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+                    document.getElementById("mobile-toggle-theme").innerText = "· Light"
 
                 } else {
                     pagebody.classList.add('dark-theme');
                     // mobile
-                    document.getElementById("mobile-toggle-theme").innerText = "· Light"
+                    document.getElementById("mobile-toggle-theme").innerText = "· Dark"
                 }
                 window.localStorage &&
                 window.localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light',)
