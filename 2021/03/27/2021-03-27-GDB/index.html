@@ -278,7 +278,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">watch [변수명] : 변수에 값이 써질 때 브레이크</span><br><span class="line">rwatch [변수명] : 변수의 값이 읽혀질 때 브레이크</span><br><span class="line">awatch [변수명] : 변수에 읽기, 쓰기 경우에 브레이크</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ex)</span><br><span class="line">watch a</span><br><span class="line">rwatch b</span><br><span class="line">awatch c</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h3 id="gt-x-examine-메모리-주소를-직접-조사하거나-실행될-때-조사하는-용도"><a href="#gt-x-examine-메모리-주소를-직접-조사하거나-실행될-때-조사하는-용도" class="headerlink" title="-&gt; x(examine, 메모리 주소를 직접 조사하거나 실행될 때 조사하는 용도)"></a>-&gt; x(examine, 메모리 주소를 직접 조사하거나 실행될 때 조사하는 용도)</h3><ul>
+<h3 id="gt-x-examine-메모리-주소를-직접-조사하거나-실행될-때-조사하는-용도"><a href="#gt-x-examine-메모리-주소를-직접-조사하거나-실행될-때-조사하는-용도" class="headerlink" title="-&gt; x (examine, 메모리 주소를 직접 조사하거나 실행될 때 조사하는 용도)"></a>-&gt; x (examine, 메모리 주소를 직접 조사하거나 실행될 때 조사하는 용도)</h3><ul>
 <li>조사할 메모리의 위치와 메모리를 어떻게 보여줄지에 대한 두 개의 인자가 필요.</li>
 <li>표현 형식도 한 글자의 축약형을 사용.</li>
 <li>표현 형식 문자 앞에 숫자로 얼마나 많이 출력할 것인지 표기.</li>
@@ -311,6 +311,13 @@
 
 <hr>
 <h3 id="gt-ETC"><a href="#gt-ETC" class="headerlink" title="-&gt; ETC"></a>-&gt; ETC</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">call [함수명(인자)] : 특정 함수를 인자값으로 호출</span><br><span class="line"></span><br><span class="line">jump *[주소] : 주소로 강제 분기</span><br><span class="line"></span><br><span class="line">jump [행번호] : 특정 행으로 강제 분기</span><br><span class="line"></span><br><span class="line">jump [함수명] : 특정 함수로 강제 분기</span><br><span class="line"></span><br><span class="line">show convience : 지금까지 설정한 변수를 확인</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="TIPs"><a href="#TIPs" class="headerlink" title="TIPs"></a>TIPs</h2><h3 id="어셈블리어를-시작적으로-보여준다"><a href="#어셈블리어를-시작적으로-보여준다" class="headerlink" title="어셈블리어를 시작적으로 보여준다."></a>어셈블리어를 시작적으로 보여준다.</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># gdb 실행한 상태에서 입력</span></span><br><span class="line">(gdb) layout asm</span><br></pre></td></tr></table></figure>
+
+<h3 id="레지스터를-시각적으로-보여준다"><a href="#레지스터를-시각적으로-보여준다" class="headerlink" title="레지스터를 시각적으로 보여준다."></a>레지스터를 시각적으로 보여준다.</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># gdb 실행한 상태에서 입력</span></span><br><span class="line">(gdb) layout reg</span><br></pre></td></tr></table></figure>
+
+<h3 id="코어-파일을-분석"><a href="#코어-파일을-분석" class="headerlink" title="코어 파일을 분석"></a>코어 파일을 분석</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gdb -c core</span><br></pre></td></tr></table></figure>
 
 <hr>
 <h1 id="참고"><a href="#참고" class="headerlink" title="참고"></a>참고</h1><ul>

@@ -220,13 +220,46 @@
         </header>
 
         <div class="post-content">
-            <h1 id="C언어-표준-버전-지정-옵션"><a href="#C언어-표준-버전-지정-옵션" class="headerlink" title="C언어 표준 버전 지정 옵션"></a>C언어 표준 버전 지정 옵션</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># C언어 표준 버전 지정 옵션</span></span><br><span class="line">-std=c11</span><br></pre></td></tr></table></figure>
+            <h1 id="C언어-표준-버전-지정-옵션"><a href="#C언어-표준-버전-지정-옵션" class="headerlink" title="C언어 표준 버전 지정 옵션"></a>C언어 표준 버전 지정 옵션</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># C언어 표준 버전 지정 옵션</span></span><br><span class="line">gcc -std=c11</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h1 id="C언어-표준에-따라-문법을-검사"><a href="#C언어-표준에-따라-문법을-검사" class="headerlink" title="C언어 표준에 따라 문법을 검사"></a>C언어 표준에 따라 문법을 검사</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># C언어 표준에 따라 문법을 검사</span></span><br><span class="line">-pedantic</span><br></pre></td></tr></table></figure>
+<h1 id="C언어-표준에-따라-문법을-검사"><a href="#C언어-표준에-따라-문법을-검사" class="headerlink" title="C언어 표준에 따라 문법을 검사"></a>C언어 표준에 따라 문법을 검사</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># C언어 표준에 따라 문법을 검사</span></span><br><span class="line">gcc -pedantic</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h1 id="경고-수준을-최대로-올려-모든-경고를-출력하는-옵션"><a href="#경고-수준을-최대로-올려-모든-경고를-출력하는-옵션" class="headerlink" title="경고 수준을 최대로 올려 모든 경고를 출력하는 옵션"></a>경고 수준을 최대로 올려 모든 경고를 출력하는 옵션</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 경고 수준을 최대로 올려 모든 경고를 출력하는 옵션</span></span><br><span class="line">-Wall</span><br></pre></td></tr></table></figure>
+<h1 id="경고-수준을-최대로-올려-모든-경고를-출력하는-옵션"><a href="#경고-수준을-최대로-올려-모든-경고를-출력하는-옵션" class="headerlink" title="경고 수준을 최대로 올려 모든 경고를 출력하는 옵션"></a>경고 수준을 최대로 올려 모든 경고를 출력하는 옵션</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 경고 수준을 최대로 올려 모든 경고를 출력하는 옵션</span></span><br><span class="line">gcc -Wall</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="소스-코드의-전처리-결과를-확인"><a href="#소스-코드의-전처리-결과를-확인" class="headerlink" title="소스 코드의 전처리 결과를 확인"></a>소스 코드의 전처리 결과를 확인</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -E</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="최적화-기술을-적용하여-효율적인-어셈블리-코드를-생성"><a href="#최적화-기술을-적용하여-효율적인-어셈블리-코드를-생성" class="headerlink" title="최적화 기술을 적용하여 효율적인 어셈블리 코드를 생성"></a>최적화 기술을 적용하여 효율적인 어셈블리 코드를 생성</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">gcc -o</span><br><span class="line">gcc -o0</span><br><span class="line">gcc -o1</span><br><span class="line">gcc -o2</span><br><span class="line">gcc -o3</span><br><span class="line">gcc -os</span><br><span class="line">gcc -ofast</span><br><span class="line">gcc -og</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="소스-코드를-어셈블리-코드로-컴파일"><a href="#소스-코드를-어셈블리-코드로-컴파일" class="headerlink" title="소스 코드를 어셈블리 코드로 컴파일"></a>소스 코드를 어셈블리 코드로 컴파일</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -S</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="어셈블된-어셈블리어-파일-S-확장자-을-목적-파일로-변환한다"><a href="#어셈블된-어셈블리어-파일-S-확장자-을-목적-파일로-변환한다" class="headerlink" title="어셈블된 어셈블리어 파일(.S 확장자)을 목적 파일로 변환한다."></a>어셈블된 어셈블리어 파일(.S 확장자)을 목적 파일로 변환한다.</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -C</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="링크-과정에서-링크는-main-함수를-찾는데-main-함수가-없을-경우-에러를-발생시키지만-이를-방지"><a href="#링크-과정에서-링크는-main-함수를-찾는데-main-함수가-없을-경우-에러를-발생시키지만-이를-방지" class="headerlink" title="링크 과정에서 링크는 main 함수를 찾는데, main 함수가 없을 경우 에러를 발생시키지만 이를 방지"></a>링크 과정에서 링크는 main 함수를 찾는데, main 함수가 없을 경우 에러를 발생시키지만 이를 방지</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -unresolved-symbols</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="symbol-table-제거"><a href="#symbol-table-제거" class="headerlink" title="symbol table 제거"></a>symbol table 제거</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -s</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="스택의-경계가-N-byte-단위로-증가하도록-설정"><a href="#스택의-경계가-N-byte-단위로-증가하도록-설정" class="headerlink" title="스택의 경계가 N byte 단위로 증가하도록 설정"></a>스택의 경계가 N byte 단위로 증가하도록 설정</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -mpreferred-stack-boundary=N</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="스택-보호-기법을-쓰지-않는다"><a href="#스택-보호-기법을-쓰지-않는다" class="headerlink" title="스택 보호 기법을 쓰지 않는다."></a>스택 보호 기법을 쓰지 않는다.</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -fno-stack-protector</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="ASLR-기법이-코드-영역에도-적용되게-해주는-PIE-기술을-적용하지-않음"><a href="#ASLR-기법이-코드-영역에도-적용되게-해주는-PIE-기술을-적용하지-않음" class="headerlink" title="ASLR 기법이 코드 영역에도 적용되게 해주는 PIE 기술을 적용하지 않음"></a>ASLR 기법이 코드 영역에도 적용되게 해주는 PIE 기술을 적용하지 않음</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -no-pie</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="NX-기법을-해제한다"><a href="#NX-기법을-해제한다" class="headerlink" title="NX 기법을 해제한다."></a>NX 기법을 해제한다.</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -zexecstack</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="정적-컴파일"><a href="#정적-컴파일" class="headerlink" title="정적 컴파일"></a>정적 컴파일</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -static</span><br></pre></td></tr></table></figure>
 
 <hr>
 
