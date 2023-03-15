@@ -15,7 +15,7 @@
 
 
 
-<title>[Baekjoon]10926 | Slay(Sean)</title>
+<title>baekjoon-18108 | Slay(Sean)</title>
 
 
 
@@ -195,7 +195,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">[Baekjoon]10926</h1>
+            <h1 class="post-title">baekjoon-18108</h1>
             
                 <div class="post-meta">
                     
@@ -204,28 +204,20 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">March 15, 2023&nbsp;&nbsp;23:00:01</a>
+                        Date: <a href="#">March 15, 2023&nbsp;&nbsp;23:56:29</a>
                         </span>
                     
-                    
-                        <span class="post-category">
-                    Category:
-                            
-                                <a href="/categories/algorithm-exercises/">algorithm exercises</a>
-                            
-                        </span>
                     
                 </div>
             
         </header>
 
         <div class="post-content">
-            <h1 id="Q"><a href="#Q" class="headerlink" title="Q"></a>Q</h1><p><a target="_blank" rel="noopener" href="https://www.acmicpc.net/problem/10926">백준 10926</a></p>
-<p><img src="/images/algorithm_exercises/10926.png" alt="백준 10926번 문제"></p>
+            <h1 id="Q"><a href="#Q" class="headerlink" title="Q"></a>Q</h1><p><a target="_blank" rel="noopener" href="https://www.acmicpc.net/problem/18108">백준 10926</a></p>
+<p><img src="/images/algorithm_exercises/18108.png" alt="백준 10926번 문제"></p>
 <hr>
-<h1 id="C-code"><a href="#C-code" class="headerlink" title="C code"></a>C code</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> s[<span class="number">50</span>] = &#123;<span class="number">0</span>,&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, s);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(!(<span class="built_in">strcmp</span>(s, <span class="string">&quot;joonas&quot;</span>) == <span class="number">0</span>) || !(<span class="built_in">strcmp</span>(s, <span class="string">&quot;baekjoon&quot;</span>)==<span class="number">0</span>))</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s??!&quot;</span>, s);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="short-code"><a href="#short-code" class="headerlink" title="short code"></a>short code</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s[<span class="number">50</span>];main()&#123;<span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,s);<span class="keyword">if</span>(!(<span class="built_in">strcmp</span>(s,<span class="string">&quot;joonas&quot;</span>)==<span class="number">0</span>)||!(<span class="built_in">strcmp</span>(s,<span class="string">&quot;baekjoon&quot;</span>)==<span class="number">0</span>))<span class="built_in">printf</span>(<span class="string">&quot;%s??!&quot;</span>,s);&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">main(a)&#123;<span class="built_in">printf</span>(<span class="string">&quot;%s?\?!&quot;</span>,gets(&amp;a));&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="C-code"><a href="#C-code" class="headerlink" title="C code"></a>C code</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, a);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(a &gt;= <span class="number">1000</span> &amp;&amp; a &lt;= <span class="number">3000</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, a<span class="number">-543</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="short-code"><a href="#short-code" class="headerlink" title="short code"></a>short code</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">main(a)&#123;<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a);<span class="keyword">if</span>(a&gt;=<span class="number">1000</span>&amp;&amp;a&lt;=<span class="number">3000</span>)<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a<span class="number">-543</span>);&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
 
@@ -242,7 +234,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2023/03/15/2022-08-21-baekjoon-10926/">http://example.com/2023/03/15/2022-08-21-baekjoon-10926/</a></span>
+                        <span><a href="http://example.com/2023/03/15/baekjoon-18108/">http://example.com/2023/03/15/baekjoon-18108/</a></span>
                     </p>
                 
                 
@@ -275,10 +267,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2023/03/15/baekjoon-18108/">baekjoon-18108</a>
             
-            
-            <a class="next" rel="next" href="/2023/01/20/2023-01-20-commands-useful-when-studying-system-hacking/">[Note] Commands useful when studying system hacking</a>
+            <a class="next" rel="next" href="/2023/03/15/2022-08-21-baekjoon-10926/">[Baekjoon]10926</a>
             
         </section>
 
