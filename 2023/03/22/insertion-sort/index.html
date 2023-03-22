@@ -15,7 +15,7 @@
 
 
 
-<title>[C]selection-sort | Slay(Sean)</title>
+<title>[C]insertion-sort | Slay(Sean)</title>
 
 
 
@@ -195,7 +195,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">[C]selection-sort</h1>
+            <h1 class="post-title">[C]insertion-sort</h1>
             
                 <div class="post-meta">
                     
@@ -204,7 +204,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">March 22, 2023&nbsp;&nbsp;10:48:26</a>
+                        Date: <a href="#">March 22, 2023&nbsp;&nbsp;12:41:18</a>
                         </span>
                     
                     
@@ -222,10 +222,7 @@
         </header>
 
         <div class="post-content">
-            <h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> arr[<span class="number">10</span>] = &#123;<span class="number">3</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">6</span>, <span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> idx=i, j=<span class="number">0</span>, temp=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(j = i+<span class="number">1</span>; j &lt; <span class="number">10</span>; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[idx] &gt; arr[j])</span><br><span class="line">                idx = j;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        temp = arr[i];</span><br><span class="line">        arr[i] = arr[idx];</span><br><span class="line">        arr[idx] = temp;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d, %d, %d, %d, %d, %d, %d, %d, %d, %d\n&quot;</span>, </span><br><span class="line">        arr[<span class="number">0</span>], arr[<span class="number">1</span>], arr[<span class="number">2</span>], arr[<span class="number">3</span>], arr[<span class="number">4</span>], arr[<span class="number">5</span>], arr[<span class="number">6</span>], arr[<span class="number">7</span>], arr[<span class="number">8</span>], arr[<span class="number">9</span>]);        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="functioning"><a href="#functioning" class="headerlink" title="functioning"></a>functioning</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+            <h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> arr[<span class="number">5</span>] = &#123;<span class="number">7</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">3</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i=<span class="number">1</span>, j=<span class="number">0</span>, idx=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span>(; i &lt; <span class="number">5</span>; i++)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// 삽입할 숫자를 백업</span></span><br><span class="line">    idx = arr[i];</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 백업한 숫자를 기준으로 이전에 있는 값들과 비교하여</span></span><br><span class="line"><span class="comment">    idx 값이 arr[i-1]의 값보다 작을 때까지 반복</span></span><br><span class="line"><span class="comment">    즉, 삽입할 수보다 큰 수들이 안 나올 때까지 반복한다.*/</span></span><br><span class="line">    <span class="comment">// 삽입할 수는 백업해뒀기 때문에 덮어씌워져도 되므로</span></span><br><span class="line">    <span class="comment">// 한칸씩 뒤로 미뤄 정렬한다.</span></span><br><span class="line">    <span class="keyword">for</span>(j = i - <span class="number">1</span>; j &gt;= <span class="number">0</span> &amp;&amp; arr[j] &gt; idx; j--)</span><br><span class="line">    &#123;</span><br><span class="line">      arr[j + <span class="number">1</span>] = arr[j];</span><br><span class="line">    &#125;</span><br><span class="line">      </span><br><span class="line">    <span class="comment">/* 위의 for 문이 돌고나면 삽입할 숫자의 위치가 나왔으므로 해당 위치에 삽입</span></span><br><span class="line"><span class="comment">    위의 for문이 끝날 때 j--이 수행된다는 점을 참고*/</span></span><br><span class="line">    arr[j+<span class="number">1</span>] = idx;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, arr[i]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
 
@@ -242,7 +239,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2023/03/22/selection-sort/">http://example.com/2023/03/22/selection-sort/</a></span>
+                        <span><a href="http://example.com/2023/03/22/insertion-sort/">http://example.com/2023/03/22/insertion-sort/</a></span>
                     </p>
                 
                 
@@ -275,10 +272,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2023/03/22/insertion-sort/">[C]insertion-sort</a>
             
-            
-            <a class="next" rel="next" href="/2023/03/15/baekjoon-18108/">baekjoon-18108</a>
+            <a class="next" rel="next" href="/2023/03/22/selection-sort/">[C]selection-sort</a>
             
         </section>
 
