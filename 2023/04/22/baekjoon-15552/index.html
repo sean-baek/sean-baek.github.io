@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Slay">
+
+
+
+    <meta name="description" content="stone+i">
+
+
+
+<title>baekjoon-15552 | Slay(Sean)</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Slay&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" target="_blank" rel="noopener" href="https://sean.tistory.com">Tistory</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Slay&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" target="_blank" rel="noopener" href="https://sean.tistory.com">Tistory</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">baekjoon-15552</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Slay</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">April 22, 2023&nbsp;&nbsp;4:05:33</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="Q"><a href="#Q" class="headerlink" title="Q"></a>Q</h1><p><a target="_blank" rel="noopener" href="https://www.acmicpc.net/problem/15552">백준 15552</a></p>
+<p><img src="/images/algorithm_exercises/15552.png" alt="백준 15552번 문제"></p>
+<hr>
+<h1 id="C-code"><a href="#C-code" class="headerlink" title="C code"></a>C code</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> a, b, t;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;t);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; t; i++)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;a, &amp;b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, a+b);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="short-code"><a href="#short-code" class="headerlink" title="short code"></a>short code</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">main(a,b,t,i)&#123;<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;t);<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;t;i++)&#123;<span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>,&amp;a,&amp;b);<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,a+b);&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="C-Code"><a href="#C-Code" class="headerlink" title="C++ Code"></a>C++ Code</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  cin.<span class="built_in">tie</span>(<span class="literal">NULL</span>);</span><br><span class="line">  ios_base::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">int</span> t, a, b, sum = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  cin &gt;&gt; t;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; t; i++)</span><br><span class="line">  &#123;</span><br><span class="line">    cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    cout &lt;&lt; a + b &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h1><ul>
+<li>알고리즘 문제를 풀 때 아래의 구문들은 수행 속도면에서 퍼포먼스를 향상시키기 위함이다.</li>
+</ul>
+<h2 id="ios-base-sync-with-stdio-false"><a href="#ios-base-sync-with-stdio-false" class="headerlink" title="ios_base::sync_with_stdio(false)"></a><strong>ios_base::sync_with_stdio(false)</strong></h2><p>기본적으로 C++와 C의 표준 스트림은 동기화 되어 있기 때문에 C++ 파일에 C++ 및 C 문법 각각의 입출력 스타일(cin, scanf, cout, printf)대로 적어도 알아서 동기화에 의해 C와 C++이 동일한 버퍼를 공유하여 입출력 결과를 순서대로 출력한다.</p>
+<p>하지만 동기화를 하므로 딜레이가 발생하여 속도면에서 퍼포먼스가 떨어지게 되는데</p>
+<p>위의 문장을 통해 동기화를 끊으면 C++ 파일에 C 문법의 입출력 함수는 사용하지 못하게 된다.</p>
+<p>즉, 쉽게 말해 평소에는 C의 stdio와 C++의 iostream이 동기화 되어 있는데, 위의 문장을 이용해 동기화를 비활성화 해줌으로써 많은 양의 입출력을 처리하는 데 있어 퍼포먼스를 증가시킬 수 있다.</p>
+<p>알고리즘 문제 풀 때는 예외 처리나 멀티스레드 작업이 필요없으므로 많이 사용한다.</p>
+<h2 id="cin-tie-NULL"><a href="#cin-tie-NULL" class="headerlink" title="cin.tie(NULL)"></a><strong>cin.tie(NULL)</strong></h2><p>기본적으로 cin과 cout, 입출력은 묶여있는데, 이 말은 입력 요청이 들어왔을 때 이전에 작업하던 출력 작업이 있으면 출력 버퍼에 있는 것을 비워서 화면에 출력하고, 입력을 받는다는 것이다.</p>
+<p>즉, 입력 요청이 들어오면 출력 버퍼를 비우고 입력을 받기 때문에 딜레이가 걸리게 된다.</p>
+<p>하지만 위의 문장을 이용해 입력과 출력의 연결을 끊어줌으로써, 한 번에 입력을 다 받고, 출력을 한 번에 하게 되는 현상을 실현할 수 있다.</p>
+<p>주의할 점은 입출력 순서를 보장받을 수 없다는 것이다.</p>
+<h2 id="endl"><a href="#endl" class="headerlink" title="endl"></a><strong>endl</strong></h2><p>endl은 개행도 해주지만, 출력 버퍼를 비우는 작업도 해준다.</p>
+<p>위의 cin.tie(NULL)도 쓰고, endl도 같이 쓰면, cin.tie(NULL)에 의해 입출력의 묶음을 풀어줌으로써 한 번에 입력을 받고 나중에 한 번에 출력 버퍼를 지우려는 목적이 endl에 의해 효과를 볼 수 없게 된다.</p>
+<p>즉, cin.tie(NULL) 문장이 무력화되므로, ‘\n’을 사용해주는 것이 좋다.</p>
+<p><a target="_blank" rel="noopener" href="https://velog.io/@gogori6565/BOJ-cin.tieNULL%EA%B3%BC-iosbasesyncwithstdiofalse">cin.tie(NULL)과 ios_base::sync_with_stdio(false) 그리고 endl</a><br><a target="_blank" rel="noopener" href="https://ip99202.github.io/posts/%EC%9E%85%EC%B6%9C%EB%A0%A5-%EC%86%8D%EB%8F%84-%EC%A4%84%EC%9D%B4%EA%B8%B0/">https://ip99202.github.io/posts/%EC%9E%85%EC%B6%9C%EB%A0%A5-%EC%86%8D%EB%8F%84-%EC%A4%84%EC%9D%B4%EA%B8%B0/</a><br><a target="_blank" rel="noopener" href="https://jaimemin.tistory.com/1521">https://jaimemin.tistory.com/1521</a></p>
+<hr>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Slay</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://example.com/2023/04/22/baekjoon-15552/">http://example.com/2023/04/22/baekjoon-15552/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2021 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2023/04/22/baekjoon-25314/">baekjoon-25314</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Slay | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
