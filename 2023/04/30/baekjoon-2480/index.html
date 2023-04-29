@@ -15,7 +15,7 @@
 
 
 
-<title>baekjoon-1001 A-B | Slay(Sean)</title>
+<title>baekjoon-2480 주사위 세개 | Slay(Sean)</title>
 
 
 
@@ -195,7 +195,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">baekjoon-1001 A-B</h1>
+            <h1 class="post-title">baekjoon-2480 주사위 세개</h1>
             
                 <div class="post-meta">
                     
@@ -204,7 +204,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">August 21, 2022&nbsp;&nbsp;17:31:01</a>
+                        Date: <a href="#">April 30, 2023&nbsp;&nbsp;7:05:51</a>
                         </span>
                     
                     
@@ -220,8 +220,12 @@
         </header>
 
         <div class="post-content">
-            <h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">main(a,b)&#123;<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;a,&amp;b);<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,a-b);&#125;</span><br></pre></td></tr></table></figure>
+            <h1 id="Q"><a href="#Q" class="headerlink" title="Q"></a>Q</h1><p><a target="_blank" rel="noopener" href="https://www.acmicpc.net/problem/2480">백준 2480</a></p>
+<p><img src="/images/algorithm_exercises/2480.PNG" alt="백준 2480번 문제"></p>
+<hr>
+<h1 id="C-code"><a href="#C-code" class="headerlink" title="C code"></a>C code</h1><h2 id="if-else-if-else"><a href="#if-else-if-else" class="headerlink" title="if - else if - else"></a>if - else if - else</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> dice1, dice2, dice3, result;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d %d %d&quot;</span>, &amp;dice1, &amp;dice2, &amp;dice3);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span>(dice1 == dice2 &amp;&amp; dice2 == dice3)</span><br><span class="line">    result = <span class="number">10000</span> + dice1 * <span class="number">1000</span>;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span>(dice1 == dice2 || dice1 == dice3)</span><br><span class="line">    result = <span class="number">1000</span> + dice1 * <span class="number">100</span>;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span>(dice2 == dice3 &amp;&amp; dice1 != dice3)</span><br><span class="line">    result = <span class="number">1000</span> + dice3 * <span class="number">100</span>;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">if</span>(dice1 &gt; dice2 &amp;&amp; dice1 &gt; dice3)</span><br><span class="line">      result = dice1 * <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(dice2 &gt; dice1 &amp;&amp; dice2 &gt; dice3)</span><br><span class="line">      result = dice2 * <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(dice3 &gt; dice1 &amp;&amp; dice3 &gt; dice1)</span><br><span class="line">      result = dice3 * <span class="number">100</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, result);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="삼항-연산자"><a href="#삼항-연산자" class="headerlink" title="삼항 연산자"></a>삼항 연산자</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> dice1, dice2, dice3, result;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d %d %d&quot;</span>, &amp;dice1, &amp;dice2, &amp;dice3);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 주사위 3개 모두 같은 값일 때</span></span><br><span class="line">  <span class="keyword">if</span>(dice1 == dice2 &amp;&amp; dice2 == dice3)</span><br><span class="line">    result = <span class="number">10000</span> + dice1 * <span class="number">1000</span>;</span><br><span class="line">  <span class="comment">// 첫 번째와 나머지 주사위 중 값이 같을 때와 나머지 주사위끼리 같을 때</span></span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span>(result = (dice1 == dice2 || dice1 == dice3) ? (<span class="number">1000</span> + dice1 * <span class="number">100</span>) : ((dice2 == dice3) ? (<span class="number">1000</span> + dice3 * <span class="number">100</span>) : <span class="number">0</span>))&#123;&#125;</span><br><span class="line">  <span class="comment">// 3개의 주사위 모두 값이 다를 때</span></span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    result = (dice1 &gt; dice2 &amp;&amp; dice1 &gt; dice3) ? (dice1 * <span class="number">100</span>) : ((dice2 &gt; dice1 &amp;&amp; dice2 &gt; dice3) ? (dice2 * <span class="number">100</span>) : (dice3 * <span class="number">100</span>));</span><br><span class="line"></span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, result);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 
         </div>
@@ -237,7 +241,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2022/08/21/2022-08-21-baekjoon-1001/">http://example.com/2022/08/21/2022-08-21-baekjoon-1001/</a></span>
+                        <span><a href="http://example.com/2023/04/30/baekjoon-2480/">http://example.com/2023/04/30/baekjoon-2480/</a></span>
                     </p>
                 
                 
@@ -270,10 +274,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2022/08/21/2022-08-21-baekjoon-1008/">baekjoon-1008 A/B</a>
             
-            
-            <a class="next" rel="next" href="/2022/08/21/2022-08-21-baekjoon-1000/">baekjoon-1000 A+B</a>
+            <a class="next" rel="next" href="/2023/04/30/baekjoon-11718/">baekjoon-11718 그대로 출력하기</a>
             
         </section>
 
