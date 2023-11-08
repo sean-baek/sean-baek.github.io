@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Slay">
+
+
+
+    <meta name="description" content="stone+i">
+
+
+
+<title>codeup-1085 소리 파일 저장용량 계산하기(bit -&gt; MB로 변환) | Slay(Sean)</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Slay&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" target="_blank" rel="noopener" href="https://sean.tistory.com">Tistory</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Slay&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" target="_blank" rel="noopener" href="https://sean.tistory.com">Tistory</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">codeup-1085 소리 파일 저장용량 계산하기(bit -&gt; MB로 변환)</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Slay</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">November 8, 2023&nbsp;&nbsp;14:24:06</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/codeup/">codeup</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="Q"><a href="#Q" class="headerlink" title="Q"></a>Q</h1><p><a target="_blank" rel="noopener" href="https://codeup.kr/problem.php?id=1085">codeup 1085</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">소리가 컴퓨터에 저장될 때에는 디지털 데이터화 되어 저장된다.</span><br><span class="line"></span><br><span class="line">마이크를 통해 1초에 적게는 수십 번, 많게는 수만 번 소리의 강약을 체크해</span><br><span class="line">그 값을 정수값으로 바꾸고, 그 값을 저장해 소리를 파일로 저장할 수 있다.</span><br><span class="line"></span><br><span class="line">값을 저장할 때에는 비트를 사용하는 정도에 따라 세세한 녹음 정도를 결정할 수 있고,</span><br><span class="line">좌우(스테레오) 채널로 저장하면 2배… 5.1채널이면 6배의 저장공간이 필요하고,</span><br><span class="line">녹음 시간이 길면 그 만큼 더 많은 저장공간이 필요하다.</span><br><span class="line"></span><br><span class="line">1초 동안 마이크로 소리강약을 체크하는 수를 h</span><br><span class="line">(헤르쯔, Hz 는 1초에 몇 번? 체크하는가를 의미한다.)</span><br><span class="line"></span><br><span class="line">한 번 체크한 결과를 저장하는 비트 b</span><br><span class="line">(2비트를 사용하면 0 또는 1 두 가지, 16비트를 사용하면 65536가지..)</span><br><span class="line"></span><br><span class="line">좌우 등 소리를 저장할 트랙 개수인 채널 c</span><br><span class="line">(모노는 1개, 스테레오는 2개의 트랙으로 저장함을 의미한다.)</span><br><span class="line"></span><br><span class="line">녹음할 시간 s가 주어질 때,</span><br><span class="line"></span><br><span class="line">필요한 저장 용량을 계산하는 프로그램을 작성해보자.</span><br><span class="line"></span><br><span class="line">실제로 일반적인 CD 음질(44.1KHz, 16bit, 스테레오)로 1초 동안 저장하려면</span><br><span class="line">44100 * 16 * 2 * 1 bit의 저장공간이 필요하다.</span><br><span class="line"></span><br><span class="line">이렇게 녹음하는 방식을 PCM(Pulse Code Modulation) 방법이라고 하는데,</span><br><span class="line">압축하지 않은 순수한(raw) 소리 데이터 파일은 대표적으로 *.wav 가 있다.</span><br><span class="line"></span><br><span class="line">**</span><br><span class="line">8 bit(비트)           = 1byte(바이트) // 8bit=1Byte</span><br><span class="line">1024 Byte(210 byte) = 1KB(킬로 바이트) // 1024byte=1KB</span><br><span class="line">1024 KB(210 KB)      = 1MB(메가 바이트)</span><br><span class="line">1024 MB(210 MB)     = 1GB(기가 바이트)</span><br><span class="line">1024 GB(210 GB)      = 1TB(테라 바이트)</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/algorithm_exercises/codeup/1085-1.png" alt="codeup 1085번 문제"></p>
+<hr>
+<h1 id="입력"><a href="#입력" class="headerlink" title="입력"></a>입력</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">h, b, c, s 가 공백을 두고 입력된다.</span><br><span class="line">h는 48,000이하, b는 32이하(단, 8의배수), c는 5이하, s는 6,000이하의 자연수이다.</span><br></pre></td></tr></table></figure>
+
+<h1 id="출력"><a href="#출력" class="headerlink" title="출력"></a>출력</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">필요한 저장 공간을 MB 단위로 바꾸어 출력한다.</span><br><span class="line">단, 소수점 둘째 자리에서 반올림해 첫째 자리까지 출력하고 MB를 공백을 두고 출력한다.</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="입력-예시"><a href="#입력-예시" class="headerlink" title="입력 예시"></a>입력 예시</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">44100 16 2 10</span><br></pre></td></tr></table></figure>
+<h1 id="출력-예시"><a href="#출력-예시" class="headerlink" title="출력 예시"></a>출력 예시</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.7 MB</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="C-code-v1"><a href="#C-code-v1" class="headerlink" title="C code v1"></a>C code v1</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> h=<span class="number">0</span>, b=<span class="number">0</span>, c=<span class="number">0</span>, s=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">double</span> result=<span class="number">0</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d %d %d %d&quot;</span>, &amp;h, &amp;b, &amp;c, &amp;s);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span>(h &gt; <span class="number">48000</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span>(b &gt; <span class="number">32</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span>(b % <span class="number">8</span> == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span>(c &gt; <span class="number">5</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span>(s &gt; <span class="number">6000</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  </span><br><span class="line">  result = ((<span class="keyword">double</span>)h * b * c * s) / <span class="number">8388608</span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%.1lf MB\n&quot;</span>, result);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="tip"><a href="#tip" class="headerlink" title="tip"></a>tip</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">bit를 MB로 변환했을 때의 bit 값 구하기</span><br><span class="line">8bit(1byte) * 1024 = 8196 bit(1KB)</span><br><span class="line">8196 bit(1KB) * 1024 = 8388608 bit(1MB)</span><br><span class="line"></span><br><span class="line">8388608 bit(1MB) / 1024 = 8196 bit(1KB)</span><br><span class="line">8196 bit(1KB) / 1024 = 8 bit(1byte)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="C-code-v2"><a href="#C-code-v2" class="headerlink" title="C code v2"></a>C code v2</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> h=<span class="number">0</span>, b=<span class="number">0</span>, c=<span class="number">0</span>, s=<span class="number">0</span>;</span><br><span class="line">  <span class="keyword">double</span> result=<span class="number">0</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d %d %d %d&quot;</span>, &amp;h, &amp;b, &amp;c, &amp;s);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span>(h &gt; <span class="number">48000</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span>(b &gt; <span class="number">32</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span>(b % <span class="number">8</span> == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span>(c &gt; <span class="number">5</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span>(s &gt; <span class="number">6000</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  </span><br><span class="line">  result = ((<span class="keyword">double</span>)h * b * c * s) / <span class="number">8</span> / <span class="number">1024</span> / <span class="number">1024</span>;</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%.1lf MB\n&quot;</span>, result);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="tip-1"><a href="#tip-1" class="headerlink" title="tip"></a>tip</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">h * b * c * s : 14,112,000 bit</span><br><span class="line"></span><br><span class="line">8bit == 1byte이므로 14,112,000bit / 8 == 1764000byte</span><br><span class="line"></span><br><span class="line">1024byte == 1KB이므로 1764000 / 1024 == 1722KB</span><br><span class="line"></span><br><span class="line">1024KB == 1MB이므로 1722 / 1024 == 1.~~~MB</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">주어진 14,112,000bit 수에서 8(bit)로 나누면 byte를 구할 수 있다.</span><br><span class="line"></span><br><span class="line">주어진 1,764,000byte 수에서</span><br><span class="line">1024로 한 번 나누면 KB,두 번 나누면 MB,</span><br><span class="line">세 번 나누면 GB와 같이 단위가 커지며 값을 구할 수 있다.</span><br></pre></td></tr></table></figure>
+
+<hr>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Slay</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://example.com/2023/11/08/codeup-1085/">http://example.com/2023/11/08/codeup-1085/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2021 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2023/11/08/hexo-command/">hexo-command</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Slay | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
